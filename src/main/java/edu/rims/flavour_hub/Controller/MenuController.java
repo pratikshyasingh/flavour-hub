@@ -1,4 +1,4 @@
-package edu.rims.flavour_hub.Controller;
+package edu.rims.flavour_hub.controller;
 
 public class MenuController {
     
