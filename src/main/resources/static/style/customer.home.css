@@ -72,7 +72,7 @@ header {
 .navbar-item a:hover {
     color: #0ade0a !important;
     border-bottom: 3px solid #0ade0a;
-   
+
 }
 
 .icons {
@@ -142,7 +142,7 @@ header {
 }
 
 .search-bar:hover {
-    background-color:#74e974;
+    background-color: #74e974;
 }
 
 .search-input {
@@ -172,7 +172,7 @@ header {
 .login-signin {
     margin-top: 5rem;
     width: 200px;
-     background-color:#E6E6FA;  
+    background-color: #E6E6FA;
     display: flex;
     border-radius: 1rem;
     position: relative;
@@ -183,7 +183,7 @@ header {
     display: block;
     width: 2px;
     height: 100%;
-    background-color: #E6E6FA; 
+    background-color: #E6E6FA;
     position: absolute;
     top: 0;
     left: 50%;
@@ -194,8 +194,8 @@ header {
     width: 100%;
     border: none;
     cursor: pointer;
-    font-size: medium;  
-     background-color: #E6E6FA; 
+    font-size: medium;
+    background-color: #E6E6FA;
     padding: 0.5rem 1rem;
     transition: 0.25s;
     border-radius: 1rem;
@@ -203,10 +203,10 @@ header {
 
 .login-signin .btn:hover {
     border-radius: 1rem;
-    background-color:#0ade0a;
+    background-color: #0ade0a;
 }
 
- .decription h1 {
+.decription h1 {
     padding-top: 40px;
     padding-bottom: 70px;
     font-family: "Open Sans", serif;
@@ -249,21 +249,23 @@ body {
     width: 100%;
     height: 20rem;
 }
- .content  img{
+
+.content img {
     position: absolute;
     right: 78px;
     top: 574px;
     height: 19rem;
-    border-radius: 35%;  
- }
- .img-sec img{
+    border-radius: 35%;
+}
+
+.img-sec img {
     position: absolute;
     left: 52px;
     top: 660px;
-    height: 22rem;   
- }
- 
-.content-left .info  {
+    height: 22rem;
+}
+
+.content-left .info {
     max-width: 100%;
     display: flex;
     position: absolute;
@@ -271,21 +273,23 @@ body {
     right: 316px;
     flex-direction: column;
 }
- .info-sec h2 {
+
+.info-sec h2 {
     max-width: 100%;
     font-size: 5rem;
     position: absolute;
     top: 791px;
     right: 484px;
-    font-family: sans-serif; 
+    font-family: sans-serif;
 }
+
 .content-left .info h2 {
     font-size: 60px;
     font-family: sans-serif;
     margin-bottom: 30px;
 }
 
-.content-left .info span{
+.content-left .info span {
     font-size: 80px;
 }
 
@@ -298,21 +302,23 @@ body {
     cursor: pointer;
     position: absolute;
     top: 894px;
-    right:900px;
+    right: 900px;
 }
 
 /*popular dish*/
-.popular-dishes{
+.popular-dishes {
     width: 100%;
 }
-.sub-popular-dishes{
+
+.sub-popular-dishes {
     width: 95%;
-    display: grid; 
-    grid-template-columns: repeat(5,1fr);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     justify-content: space-evenly;
     align-items: center;
     margin-left: 4rem;
 }
+
 .popular-dishes h2 {
     text-align: center;
     width: 100%;
@@ -355,7 +361,7 @@ body {
 
 .price,
 .discount,
-.details-about{
+.details-about {
     margin: 5px 0;
     font-size: 20px;
 }
@@ -432,6 +438,7 @@ body {
     font-size: 50px;
 
 }
+
 .about {
     width: 100%;
     height: 1vh;
@@ -525,6 +532,7 @@ body {
     justify-content: center;
     position: relative;
 }
+
 .review .review_box .review_card .review_profile img {
     width: 100px;
     height: 100px;
@@ -721,7 +729,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .team .team_box {
     width: 95%;
-    margin-top:5rem;
+    margin-top: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -772,11 +780,13 @@ input[type="number"]::-webkit-outer-spin-button {
     top: 25%;
     transition: 0.4s;
 }
-.info .bio{
-   font-weight: bold;
+
+.info .bio {
+    font-weight: bold;
     font-family: serif;
     font-size: 25px;
 }
+
 .team .team_box .profile:hover .info {
     top: 40%;
 }
@@ -800,7 +810,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 10px 5px 5px 0;
     cursor: pointer;
     transition: 0.3s;
-    color:black;
+    color: black;
 }
 
 .team .team_box .profile .info .team_icon i:hover {
