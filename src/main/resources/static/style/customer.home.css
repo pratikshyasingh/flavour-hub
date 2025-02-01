@@ -70,8 +70,9 @@ header {
 }
 
 .navbar-item a:hover {
-    color: #98ff98 !important;
-    border-bottom: 3px solid #98ff98;
+    color: #0ade0a !important;
+    border-bottom: 3px solid #0ade0a;
+   
 }
 
 .icons {
@@ -102,13 +103,13 @@ header {
 }
 
 .banner {
-    height: 700px;
+    height: 559px;
     width: 100%;
 }
 
 .banner-img {
     background-image: url("/images/dosa.jpg");
-    height: 700px;
+    height: 650px;
     width: 100%;
     background-position: center center;
     background-size: cover;
@@ -141,7 +142,7 @@ header {
 }
 
 .search-bar:hover {
-    background-color: #e3f8ff;
+    background-color:#74e974;
 }
 
 .search-input {
@@ -158,8 +159,9 @@ header {
 }
 
 .search-input:hover {
-    background-color: #e3f8ff;
+    background-color: #6ae56a;
     border: none;
+    color: black;
 }
 
 .search-icon {
@@ -170,7 +172,7 @@ header {
 .login-signin {
     margin-top: 5rem;
     width: 200px;
-      background-color: #E6E6FA;  
+     background-color:#E6E6FA;  
     display: flex;
     border-radius: 1rem;
     position: relative;
@@ -201,7 +203,7 @@ header {
 
 .login-signin .btn:hover {
     border-radius: 1rem;
-    background-color: rgb(255, 82, 20);
+    background-color:#0ade0a;
 }
 
  .decription h1 {
@@ -249,25 +251,35 @@ body {
 }
  .content  img{
     position: absolute;
-    right: -337px;
-    top: -291px;
-    height: 23rem;
-    border-radius: 35%;   
+    right: 78px;
+    top: 574px;
+    height: 19rem;
+    border-radius: 35%;  
  }
-   
-.content-left {
-    display: block;
-    width: 100%;
-    padding-left: 4rem;
-     position: relative;
-}
-
-.content-left .info {
+ .img-sec img{
+    position: absolute;
+    left: 52px;
+    top: 660px;
+    height: 22rem;   
+ }
+ 
+.content-left .info  {
     max-width: 100%;
     display: flex;
+    position: absolute;
+    top: 684px;
+    right: 316px;
     flex-direction: column;
 }
-.content-left .info h2{
+ .info-sec h2 {
+    max-width: 100%;
+    font-size: 5rem;
+    position: absolute;
+    top: 791px;
+    right: 484px;
+    font-family: sans-serif; 
+}
+.content-left .info h2 {
     font-size: 60px;
     font-family: sans-serif;
     margin-bottom: 30px;
@@ -284,6 +296,9 @@ body {
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    position: absolute;
+    top: 894px;
+    right:900px;
 }
 
 /*popular dish*/
@@ -450,7 +465,7 @@ body {
 
 .about .about_main .about_text h3 {
     font-size: 30px;
-    margin: 0 0 50px 0;
+    margin: 0 0 44px 0;
 }
 
 .about .about_main .about_text p {
@@ -477,8 +492,6 @@ body {
     margin-left: 15px;
     color: maroon;
     font-family: 'Segoe Script';
-
-
 }
 
 .review h1 span::after {
@@ -492,17 +505,17 @@ body {
 }
 
 .review .review_box {
-    width: 95%;
-    margin: 70px auto;
+    width: 90%;
+    margin: 20px auto;
     display: flex;
 }
 
 .review .review_box .review_card {
-    width: 350px;
-    height: 450px;
+    width: 20rem;
+    height: 22rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
-    padding: 8px 20px;
+    padding: 24px 14px;
     margin: 0 8px;
 }
 
@@ -511,16 +524,10 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    transition: 0.3s;
 }
-
-.review .review_box .review_card:hover .review_profile {
-    transform: translateY(-60px);
-}
-
 .review .review_box .review_card .review_profile img {
-    width: 180px;
-    height: 180px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
@@ -533,20 +540,11 @@ body {
 
 .review .review_box .review_card .review_text .name {
     color: black;
-    transition: 0.3s;
 }
 
-.review .review_box .review_card:hover .review_text {
-    transform: translateY(-50px);
-}
 
 .review .review_box .review_card .review_text .review_icon {
-    color: #fac031;
-    transition: 0.3s;
-}
-
-.review .review_box .review_card:hover.review_text .review_icon {
-    transform: translateY(-30px);
+    color: #ffbe1c
 }
 
 /*order */
@@ -692,11 +690,8 @@ input[type="number"]::-webkit-outer-spin-button {
 .team {
     margin-bottom: 62px;
     width: 100%;
-    /* height: 90vh; */
-    /* background-image: ; */
     background-size: cover;
     background-position: center;
-
 }
 
 .team h1 {
@@ -726,7 +721,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .team .team_box {
     width: 95%;
-    margin: 0 auto;
+    margin-top:5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -735,8 +730,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .team .team_box .profile {
-    width: 320px;
-    height: 320px;
+    width: 221px;
+    height: 214px;
     border-radius: 50%;
     margin: 0 15px;
     display: flex;
@@ -749,13 +744,13 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .team .team_box .profile:hover {
     border-radius: 20px;
-    height: 350px;
+    height: 270px;
 
 }
 
 .team .team_box .profile img {
-    width: 250px;
-    height: 250px;
+    width: 170px;
+    height: 170px;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
@@ -777,19 +772,25 @@ input[type="number"]::-webkit-outer-spin-button {
     top: 25%;
     transition: 0.4s;
 }
-
+.info .bio{
+   font-weight: bold;
+    font-family: serif;
+    font-size: 25px;
+}
 .team .team_box .profile:hover .info {
-    top: 60%;
+    top: 40%;
 }
 
 .team .team_box .profile .info .name {
-    color: darkblue;
+    color: maroon;
     margin-bottom: 15px;
+    font-size: 30px;
 
 }
 
 .team .team_box .profile .info .bio {
     width: 70%;
+    color: black;
     text-align: center;
     margin: 0 auto 10px auto;
 
@@ -799,6 +800,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 10px 5px 5px 0;
     cursor: pointer;
     transition: 0.3s;
+    color:black;
 }
 
 .team .team_box .profile .info .team_icon i:hover {
