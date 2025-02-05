@@ -72,7 +72,6 @@ header {
 .navbar-item a:hover {
     color: #0ade0a !important;
     border-bottom: 3px solid #0ade0a;
-
 }
 
 .icons {
@@ -83,7 +82,6 @@ header {
     color: #f4ede4;
     font-size: 1.8rem;
     padding-top: 1rem;
-
 }
 
 .menu-bar:hover {
@@ -242,18 +240,28 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: 50% auto;
+    /* grid-template-columns: 50% auto; */
     margin-top: 50px;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 20rem;
+    background-color: cornsilk;
+}
+
+.content-left {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .content img {
     position: absolute;
     right: 78px;
-    top: 574px;
+    top: 539px;
     height: 19rem;
     border-radius: 35%;
 }
@@ -261,17 +269,8 @@ body {
 .img-sec img {
     position: absolute;
     left: 52px;
-    top: 660px;
+    top: 706px;
     height: 22rem;
-}
-
-.content-left .info {
-    max-width: 100%;
-    display: flex;
-    position: absolute;
-    top: 684px;
-    right: 316px;
-    flex-direction: column;
 }
 
 .info-sec h2 {
@@ -284,7 +283,7 @@ body {
 }
 
 .content-left .info h2 {
-    font-size: 60px;
+    font-size: 2rem;
     font-family: sans-serif;
     margin-bottom: 30px;
 }
@@ -300,9 +299,35 @@ body {
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    position: absolute;
-    top: 894px;
-    right: 900px;
+    font-size: 1.2rem;
+}
+
+@media (max-width:768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-gap: 20px;
+    }
+
+    .content-left {
+        text-align: center;
+    }
+
+    .content-left .info h2 {
+        font-size: 2.5rem;
+    }
+
+    .content img {
+        /* flex-direction: column; */
+        max-height: 15rem;
+        width: auto;
+    }
+
+    .img-sec img {
+        /* flex-direction: column; */
+        max-height: 15rem;
+        width: auto;
+    }
 }
 
 /*popular dish*/
@@ -394,7 +419,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
 }
 
 .food-container {
@@ -436,7 +460,6 @@ body {
     margin-left: 5px;
     font-family: 'Segoe Script';
     font-size: 50px;
-
 }
 
 .about {
@@ -555,99 +578,6 @@ body {
     color: #ffbe1c
 }
 
-/*order */
-/* .order {
-    width: 100%;
-    /* height: 100vh; */
-/* padding: 10px 0;
-    /* background-image: ; */
-/* background-size: cover;
-    background-position: center;
-} */
-*/
-/* .order h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-    font-size: 55px;
-}
-
-.order h1 span {
-    color: maroon;
-    margin-right: 15px;
-    font-family: 'Segoe Script';
-
-}
-
-.order .order_main {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-} */
-
-/* .order .order_main.order_image img {
-    width: 600px;
-}
-
-.order .order_main form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 10px;
-}
-
-.order .order_main form .input p {
-    line-height: 10px;
-    font-size: 25px;
-}
-
-.order .order_main form .input {
-    margin: 10px;
-
-} */
-
-/* .order .order_main form .input ::placeholder {
-    font-size: 20px;
-}
-
-/* up down icon*/
-/* .input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-    width: 20px;
-    height: 20px;
-}
-
-.input[type="number"] {
-    font-size: 16px;
-    padding: 5px; */
-
-
-/* .order .order_main form .input input {
-    width: 300px;
-    height: 35px;
-    padding: 0 10px;
-    border: 2px solid #cccccc;
-    background: #eeeeee;
-    outline: none;
-    border-radius: 3px;
-}
-
-.order .order_main form .input input:focus {
-    border: 5px solid #fac031;
-} */
-
-/* .order .order_main form .order_btn {
-    padding: 10px 0;
-    background: maroon;
-    color: white;
-    width: 50%;
-    text-align: center;
-    margin-top: 20px;
-    text-decoration: none;
-} */
-
 /*our gallary*/
 .gallery-container h1 {
     display: flex;
@@ -724,7 +654,6 @@ input[type="number"]::-webkit-outer-spin-button {
     display: block;
     position: relative;
     bottom: 15px;
-
 }
 
 .team .team_box {
@@ -753,7 +682,6 @@ input[type="number"]::-webkit-outer-spin-button {
 .team .team_box .profile:hover {
     border-radius: 20px;
     height: 270px;
-
 }
 
 .team .team_box .profile img {
@@ -795,7 +723,6 @@ input[type="number"]::-webkit-outer-spin-button {
     color: maroon;
     margin-bottom: 15px;
     font-size: 30px;
-
 }
 
 .team .team_box .profile .info .bio {
@@ -803,7 +730,6 @@ input[type="number"]::-webkit-outer-spin-button {
     color: black;
     text-align: center;
     margin: 0 auto 10px auto;
-
 }
 
 .team .team_box .profile .info .team_icon i {
