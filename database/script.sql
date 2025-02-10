@@ -15,7 +15,6 @@ CREATE TABLE category (
     updated_by VARCHAR(50)   
 );
 
-
 --food-item table
 CREATE TABLE food_item(
     food_id VARCHAR(255) PRIMARY KEY ,
