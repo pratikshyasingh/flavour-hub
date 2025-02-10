@@ -8,40 +8,132 @@
     <link rel="stylesheet" href="/style/admin.home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <section class="header">
-        <div class="logo">
-            <img src="/image/flavourhub-name.png" alt="">
-            <h2>FlavourHub</h2>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class="fa-solid fa-bars"></i>
+            <span class="logo_name">FlavourHub</span>
         </div>
-        <div class="search-notification-profile"></div>
-        <div class="search">
-            <input type="text" placeholder="Search..">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-        <div class="notification-profile">
-            <div class="picon bell">
-                <i class="fa-solid fa-bell"></i>
-            </div>
-            <div class="picon chat">
-                <i class="fa-brands fa-rocketchat"></i>
-            </div>
-            <div class="picon menu">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <div class="picon profile ">
-                <i class="fa-solid fa-user"></i>
-            </div>
-        </div>
-    </section>
-    <section class="main">
-        <div class="sidebar">jdfjkddf</div>
-        <div class="main-content">hjhfkds</div>
-    </section>
+        <ul class="nav-links">
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-house"></i>
 
+                    <span class="link-name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-utensils"></i>
+
+                    <span class="link-name">Order</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="link-name">Customer</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="link-name">cart</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class="link-name">Analytics</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="link-name">Setting</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span class="link-name">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--home-content-->
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class="fa-solid fa-bars"></i>
+                <span class="dashboard">Dashboard</span>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="profile-details">
+                <img src="https://plus.unsplash.com/premium_photo-1688350808212-4e6908a03925?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29uJTIwd2hpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww"
+                    alt="">
+                <span class="admin_name">Pratikshya</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </nav>
+
+        <!--home -content-->
+        <div class="home-content">
+            <div class="overview-boxes">
+                <div class="box">
+                    <div class="left-side">
+                        <div class="box_topic">Total Order</div>
+                        <div class="number">40,647</div>
+                        <div class="indicator">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            <span class="text">Up from yesterday</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="box">
+                    <div class="left-side">
+                        <div class="box_topic">Complete Order</div>
+                        <div class="number">40,647</div>
+                        <div class="indicator">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            <span class="text">Up from yesterday</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="box">
+                    <div class="left-side">
+                        <div class="box_topic">Order On Process</div>
+                        <div class="number">40,647</div>
+                        <div class="indicator">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            <span class="text">Up from yesterday</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-cart-arrow-down"></i>
+                </div>
+                <div class="box">
+                    <div class="left-side">
+                        <div class="box_topic">Pending Order</div>
+                        <div class="number">40,647</div>
+                        <div class="indicator">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            <span class="text">Up from yesterday</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-cart-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
 
