@@ -174,7 +174,6 @@ CREATE TABLE review_and_rating(
 
 );
 
-
 --discount_and_coupon table
 -- CREATE TABLE discount_and_coupon(
 --     dicount_id VARCHAR(255) PRIMARY KEY ,
