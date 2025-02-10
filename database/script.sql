@@ -189,7 +189,6 @@ CREATE TABLE review_and_rating(
 
 -- );
 
-
 --inventory table
 -- CREATE TABLE inventory (
 --     item_id VARCHAR(255) PRIMARY KEY ,

@@ -13,3 +13,4 @@ VALUES (UUID(), 'Appetizers', 'Starters and appetizers', 'https://example.com/im
 
 INSERT INTO category (category_id, category_name, category_description, category_image_url, created_by, updated_by)
 VALUES (UUID(), 'Salads', 'Fresh and healthy salads', 'https://example.com/images/salads.jpg', 'admin', 'admin');
+
