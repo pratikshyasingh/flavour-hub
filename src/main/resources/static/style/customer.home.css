@@ -1,135 +1,33 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+ .banner {
+     height: 559px;
+     width: 100%;
+ }
 
-header {
-    position: relative;
-}
+ .banner-img {
+     background-image: url("/images/dosa.jpg");
+     height: 650px;
+     width: 100%;
+     background-position: center center;
+     background-size: cover;
+     position: relative;
+ }
 
-.navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-}
+ .overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.7);
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
 
-.navbar-logo {
-    height: 100px;
-    padding: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+ /* search */
 
-.logo {
-    background-image: url("/images/flavourhub2-logo.png");
-    height: 120px;
-    width: 120px;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-name {
-    background-image: url("/images/flavourhub-name.png");
-    height: 120px;
-    width: 150px;
-    background-size: cover;
-    padding-top: 1rem;
-}
-
-.navbar-item {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-left: 100px;
-    padding-top: 1rem;
-}
-
-.navbar-item p {
-    display: inline;
-    margin: 10px;
-    align-items: center;
-    font-weight: 550;
-    font-family: serif;
-    font-size: 1.6rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.navbar-item a {
-    text-decoration: none;
-    color: #F4EDF4 !important;
-    border-bottom: 3px solid transparent;
-}
-
-.navbar-item a:hover {
-    color: #0ade0a !important;
-    border-bottom: 3px solid #0ade0a;
-}
-
-.icons {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    width: 45%;
-    color: #f4ede4;
-    font-size: 1.8rem;
-    padding-top: 1rem;
-}
-
-.menu-bar:hover {
-    color: #98ff98;
-}
-
-.bell-icon:hover {
-    color: #98ff98;
-}
-
-.profile:hover {
-    color: #98ff98;
-}
-
-.cart:hover {
-    color: #98ff98;
-}
-
-.banner {
-    height: 559px;
-    width: 100%;
-}
-
-.banner-img {
-    background-image: url("/images/dosa.jpg");
-    height: 650px;
-    width: 100%;
-    background-position: center center;
-    background-size: cover;
-    position: relative;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* search */
-
-.search-bar {
+ /* .search-bar {
     width: 415px;
     background-color: #F4EDF4;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -165,620 +63,580 @@ header {
 .search-icon {
     font-size: x-large;
     padding-right: 15px;
-}
-
-.login-signin {
-    margin-top: 5rem;
-    width: 200px;
-    background-color: #E6E6FA;
-    display: flex;
-    border-radius: 1rem;
-    position: relative;
-}
-
-.login-signin::after {
-    content: '';
-    display: block;
-    width: 2px;
-    height: 100%;
-    background-color: #E6E6FA;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-}
-
-.login-signin .btn {
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    font-size: medium;
-    background-color: #E6E6FA;
-    padding: 0.5rem 1rem;
-    transition: 0.25s;
-    border-radius: 1rem;
-}
-
-.login-signin .btn:hover {
-    border-radius: 1rem;
-    background-color: #0ade0a;
-}
-
-.decription h1 {
-    padding-top: 40px;
-    padding-bottom: 70px;
-    font-family: "Open Sans", serif;
-    font-optical-sizing: auto;
-    font-size: 50px;
-    color: white;
-    background-clip: padding-box;
-    word-spacing: 10px;
-}
-
-.text {
-    font-size: x-large;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.img img {
-    height: 300px;
-}
-
-body {
-    background-color: cornsilk;
-    overflow-x: hidden;
-}
-
-.left-align-wrapper {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.grid {
-    display: grid;
-    /* grid-template-columns: 50% auto; */
-    margin-top: 50px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 20rem;
-    background-color: cornsilk;
-}
-
-.content-left {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.content img {
-    position: absolute;
-    right: 78px;
-    top: 539px;
-    height: 19rem;
-    border-radius: 35%;
-}
-
-.img-sec img {
-    position: absolute;
-    left: 52px;
-    top: 706px;
-    height: 22rem;
-}
-
-.info-sec h2 {
-    max-width: 100%;
-    font-size: 5rem;
-    position: absolute;
-    top: 791px;
-    right: 484px;
-    font-family: sans-serif;
-}
-
-.content-left .info h2 {
-    font-size: 2rem;
-    font-family: sans-serif;
-    margin-bottom: 30px;
-}
-
-.content-left .info span {
-    font-size: 80px;
-}
-
-.content-left button {
-    padding: 10px 23px;
-    background-color: maroon;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-}
-
-@media (max-width:768px) {
-    .grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        grid-gap: 20px;
-    }
-
-    .content-left {
-        text-align: center;
-    }
-
-    .content-left .info h2 {
-        font-size: 2.5rem;
-    }
-
-    .content img {
-        /* flex-direction: column; */
-        max-height: 15rem;
-        width: auto;
-    }
-
-    .img-sec img {
-        /* flex-direction: column; */
-        max-height: 15rem;
-        width: auto;
-    }
-}
-
-/*popular dish*/
-.popular-dishes {
-    width: 100%;
-}
-
-.sub-popular-dishes {
-    width: 95%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-content: space-evenly;
-    align-items: center;
-    margin-left: 4rem;
-}
-
-.popular-dishes h2 {
-    text-align: center;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 30px;
-}
-
-.dish {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 250px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: auto;
-    gap: 10px;
-}
-
-.image-container {
-    width: 100%;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.details {
-    margin-top: 10px;
-    flex-grow: 1;
-}
-
-.price,
-.discount,
-.details-about {
-    margin: 5px 0;
-    font-size: 20px;
-}
-
-.order-now {
-    padding: 10px 20px;
-    background-color: maroon;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.order-now:hover {
-    background-color: #218838;
-}
-
-/*catagory*/
-
-.catagory {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.food-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.food-container {
-    display: inline-block;
-    margin: 20px;
-}
-
-.food-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: block;
-    margin: 0 auto;
-}
-
-.food-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.food-name {
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.menu h1 {
-    align-items: center;
-    color: maroon;
-    margin-left: 15px;
-    font-family: 'Segoe Script';
-    font-size: 50px;
-}
-
-.menu h1 span {
-    color: orangered;
-    margin-left: 5px;
-    font-family: 'Segoe Script';
-    font-size: 50px;
-}
-
-.about {
-    width: 100%;
-    height: 1vh;
-    padding: 11px;
-}
-
-.about .about_main {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.about .about_main .image img {
-    width: 600px;
-    position: relative;
-    top: 60px;
-
-}
-
-.about .about_main .about_text h1 span {
-    color: darkred;
-    margin-right: 15px;
-    font-family: Segoe Script;
-}
-
-.about .about_main .about_text h1 {
-    font-size: 55px;
-    position: relative;
-    bottom: 50px;
-}
-
-.about .about_main .about_text h3 {
-    font-size: 30px;
-    margin: 0 0 44px 0;
-}
-
-.about .about_main .about_text p {
-    width: 650px;
-    text-align: justify;
-    margin-right: 30px;
-    line-height: 22px;
-}
-
-/*Review*/
-.review {
-    width: 100%;
-    margin-top: 480px;
-}
-
-.review h1 {
-    font-size: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.review h1 span {
-    margin-left: 15px;
-    color: maroon;
-    font-family: 'Segoe Script';
-}
-
-.review h1 span::after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: yellow;
-    position: relative;
-    bottom: 15px;
-    display: block;
-}
-
-.review .review_box {
-    width: 90%;
-    margin: 20px auto;
-    display: flex;
-}
-
-.review .review_box .review_card {
-    width: 20rem;
-    height: 22rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    padding: 24px 14px;
-    margin: 0 8px;
-}
-
-.review .review_box .review_card .review_profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.review .review_box .review_card .review_profile img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
-    border: 5px solid #cccccc;
-}
-
-.review .review_box .review_card .review_text {
-    text-align: center;
-}
-
-.review .review_box .review_card .review_text .name {
-    color: black;
-}
-
-
-.review .review_box .review_card .review_text .review_icon {
-    color: #ffbe1c
-}
-
-/*our gallary*/
-.gallery-container h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-    font-size: 70px;
-
-}
-
-.gallery-container h1 span {
-    color: maroon;
-    margin-right: 15px;
-    font-family: 'Segoe Script';
-}
-
-.our-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    /* Space between images */
-
-}
-
-.our-gallery img {
-    width: 170px;
-    height: 200px;
-    border: 2px solid #ccc;
-    padding: 10px;
-}
-
-.gallery-container {
-    margin-top: 80px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.gallery-paragraph {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 25px;
-}
-
-
-/*team*/
-.team {
-    margin-bottom: 62px;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-.team h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 55px;
-    margin-bottom: 30px;
-}
-
-.team h1 span {
-    color: maroon;
-    margin-left: 15px;
-    font-family: 'Segoe Script';
-}
-
-.team h1 span::after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: #fac031;
-    display: block;
-    position: relative;
-    bottom: 15px;
-}
-
-.team .team_box {
-    width: 95%;
-    margin-top: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 20%;
-}
-
-.team .team_box .profile {
-    width: 221px;
-    height: 214px;
-    border-radius: 50%;
-    margin: 0 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-    transition: 0.4s;
-}
-
-.team .team_box .profile:hover {
-    border-radius: 20px;
-    height: 270px;
-}
-
-.team .team_box .profile img {
-    width: 170px;
-    height: 170px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0 rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    transition: 0.4s;
-}
-
-.team .team_box .profile:hover img {
-    border-radius: 20px;
-    margin-top: -230px;
-
-}
-
-.team .team_box .profile .info {
-    position: absolute;
-    text-align: center;
-    top: 25%;
-    transition: 0.4s;
-}
-
-.info .bio {
-    font-weight: bold;
-    font-family: serif;
-    font-size: 25px;
-}
-
-.team .team_box .profile:hover .info {
-    top: 40%;
-}
-
-.team .team_box .profile .info .name {
-    color: maroon;
-    margin-bottom: 15px;
-    font-size: 30px;
-}
-
-.team .team_box .profile .info .bio {
-    width: 70%;
-    color: black;
-    text-align: center;
-    margin: 0 auto 10px auto;
-}
-
-.team .team_box .profile .info .team_icon i {
-    margin: 10px 5px 5px 0;
-    cursor: pointer;
-    transition: 0.3s;
-    color: black;
-}
-
-.team .team_box .profile .info .team_icon i:hover {
-    color: #fac031;
-}
-
-/*Footer*/
-footer {
-    /* width: 100%;
-    padding: 30px 0 0 20px;
-    background: #eeeeee; */
-    width: 100%;
-    padding: 20px 0px 0px 9px;
-    background: #eeeeee
-}
-
-footer .footer_main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
-}
-
-footer .footer_main .footer_tag {
-    text-align: center;
-}
-
-footer .footer_main .footer_tag h2 {
-    color: #000;
-    margin-bottom: 25px;
-    font-size: 30px;
-}
-
-footer .footer_main .footer_tag p {
-    margin: 10px 0;
-    font-size: 20px;
-}
-
-footer .footer_main .footer_tag i {
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-footer .footer_main .footer_tag i:hover {
-    color: #fac031;
-}
+}  */
+
+ .login-signin {
+     margin-top: 5rem;
+     width: 200px;
+     background-color: #E6E6FA;
+     display: flex;
+     border-radius: 1rem;
+     position: relative;
+ }
+
+ .login-signin::after {
+     content: '';
+     display: block;
+     width: 2px;
+     height: 100%;
+     background-color: #E6E6FA;
+     position: absolute;
+     top: 0;
+     left: 50%;
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+ }
+
+ .login-signin .btn {
+     width: 100%;
+     border: none;
+     cursor: pointer;
+     font-size: medium;
+     background-color: #E6E6FA;
+     padding: 0.5rem 1rem;
+     transition: 0.25s;
+     border-radius: 1rem;
+ }
+
+ .login-signin .btn:hover {
+     border-radius: 1rem;
+     background-color: #0ade0a;
+ }
+
+ .decription h1 {
+     padding-top: 40px;
+     padding-bottom: 70px;
+     font-family: "Open Sans", serif;
+     font-optical-sizing: auto;
+     font-size: 50px;
+     color: white;
+     background-clip: padding-box;
+     word-spacing: 10px;
+ }
+
+ .text {
+     font-size: x-large;
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .img img {
+     height: 300px;
+ }
+
+ body {
+     background-color: cornsilk;
+     overflow-x: hidden;
+ }
+
+ .left-align-wrapper {
+     width: 100%;
+     padding: 20px;
+     box-sizing: border-box;
+ }
+
+ .grid {
+     display: grid;
+     /* grid-template-columns: 50% auto; */
+     margin-top: 50px;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     height: 20rem;
+     background-color: cornsilk;
+ }
+
+ .content-left {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     align-items: center;
+     max-width: 1200px;
+     margin: 0 auto;
+ }
+
+ .content img {
+     position: absolute;
+     right: 78px;
+     top: 539px;
+     height: 19rem;
+     border-radius: 35%;
+ }
+
+ .img-sec img {
+     position: absolute;
+     left: 52px;
+     top: 706px;
+     height: 22rem;
+ }
+
+ .info-sec h2 {
+     max-width: 100%;
+     font-size: 5rem;
+     position: absolute;
+     top: 791px;
+     right: 484px;
+     font-family: sans-serif;
+ }
+
+ .content-left .info h2 {
+     font-size: 2rem;
+     font-family: sans-serif;
+     margin-bottom: 30px;
+ }
+
+ .content-left .info span {
+     font-size: 80px;
+ }
+
+ .content-left button {
+     padding: 10px 23px;
+     background-color: maroon;
+     color: white;
+     border-radius: 5px;
+     border: none;
+     cursor: pointer;
+     font-size: 1.2rem;
+ }
+
+ @media (max-width:768px) {
+     .grid {
+         grid-template-columns: 1fr;
+         grid-template-rows: auto auto;
+         grid-gap: 20px;
+     }
+
+     .content-left {
+         text-align: center;
+     }
+
+     .content-left .info h2 {
+         font-size: 2.5rem;
+     }
+
+     .content img {
+         /* flex-direction: column; */
+         max-height: 15rem;
+         width: auto;
+     }
+
+     .img-sec img {
+         /* flex-direction: column; */
+         max-height: 15rem;
+         width: auto;
+     }
+ }
+
+ /*popular dish*/
+ .popular-dishes {
+     width: 100%;
+ }
+
+ .sub-popular-dishes {
+     width: 95%;
+     display: grid;
+     grid-template-columns: repeat(5, 1fr);
+     justify-content: space-evenly;
+     align-items: center;
+     margin-left: 4rem;
+ }
+
+ .popular-dishes h2 {
+     text-align: center;
+     width: 100%;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     font-size: 30px;
+ }
+
+ .dish {
+     border: 1px solid #ccc;
+     border-radius: 10px;
+     width: 250px;
+     padding: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     height: auto;
+     gap: 10px;
+ }
+
+ .image-container {
+     width: 100%;
+     height: 150px;
+     overflow: hidden;
+     border-radius: 10px;
+ }
+
+ .image-container img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+ .details {
+     margin-top: 10px;
+     flex-grow: 1;
+ }
+
+ .price,
+ .discount,
+ .details-about {
+     margin: 5px 0;
+     font-size: 20px;
+ }
+
+ .order-now {
+     padding: 10px 20px;
+     background-color: maroon;
+     color: white;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     margin-top: 10px;
+ }
+
+ .order-now:hover {
+     background-color: #218838;
+ }
+
+ /*catagory*/
+
+ .catagory {
+     font-family: Arial, sans-serif;
+     text-align: center;
+     padding: 20px;
+     box-sizing: border-box;
+     width: 100%;
+ }
+
+ .food-gallery {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+ }
+
+ .food-container {
+     display: inline-block;
+     margin: 20px;
+ }
+
+ .food-image {
+     width: 200px;
+     height: 200px;
+     border-radius: 50%;
+     overflow: hidden;
+     display: block;
+     margin: 0 auto;
+ }
+
+ .food-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+ .food-name {
+     margin-top: 10px;
+     font-size: 20px;
+     font-weight: bold;
+ }
+
+ .menu h1 {
+     align-items: center;
+     color: maroon;
+     margin-left: 15px;
+     font-family: 'Segoe Script';
+     font-size: 50px;
+ }
+
+ .menu h1 span {
+     color: orangered;
+     margin-left: 5px;
+     font-family: 'Segoe Script';
+     font-size: 50px;
+ }
+
+ .about {
+     width: 100%;
+     height: 1vh;
+     padding: 11px;
+ }
+
+ .about .about_main {
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+ }
+
+ .about .about_main .image img {
+     width: 600px;
+     position: relative;
+     top: 60px;
+
+ }
+
+ .about .about_main .about_text h1 span {
+     color: darkred;
+     margin-right: 15px;
+     font-family: Segoe Script;
+ }
+
+ .about .about_main .about_text h1 {
+     font-size: 55px;
+     position: relative;
+     bottom: 50px;
+ }
+
+ .about .about_main .about_text h3 {
+     font-size: 30px;
+     margin: 0 0 44px 0;
+ }
+
+ .about .about_main .about_text p {
+     width: 650px;
+     text-align: justify;
+     margin-right: 30px;
+     line-height: 22px;
+ }
+
+ /*Review*/
+ .review {
+     width: 100%;
+     margin-top: 480px;
+ }
+
+ .review h1 {
+     font-size: 55px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .review h1 span {
+     margin-left: 15px;
+     color: maroon;
+     font-family: 'Segoe Script';
+ }
+
+ .review h1 span::after {
+     content: '';
+     width: 100%;
+     height: 2px;
+     background: yellow;
+     position: relative;
+     bottom: 15px;
+     display: block;
+ }
+
+ .review .review_box {
+     width: 90%;
+     margin: 20px auto;
+     display: flex;
+ }
+
+ .review .review_box .review_card {
+     width: 20rem;
+     height: 22rem;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+     border-radius: 8px;
+     padding: 24px 14px;
+     margin: 0 8px;
+ }
+
+ .review .review_box .review_card .review_profile {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+ }
+
+ .review .review_box .review_card .review_profile img {
+     width: 100px;
+     height: 100px;
+     object-fit: cover;
+     object-position: center;
+     border-radius: 50%;
+     border: 5px solid #cccccc;
+ }
+
+ .review .review_box .review_card .review_text {
+     text-align: center;
+ }
+
+ .review .review_box .review_card .review_text .name {
+     color: black;
+ }
+
+
+ .review .review_box .review_card .review_text .review_icon {
+     color: #ffbe1c
+ }
+
+ /*our gallary*/
+ .gallery-container h1 {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: #000;
+     font-size: 70px;
+
+ }
+
+ .gallery-container h1 span {
+     color: maroon;
+     margin-right: 15px;
+     font-family: 'Segoe Script';
+ }
+
+ .our-gallery {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 12px;
+     /* Space between images */
+
+ }
+
+ .our-gallery img {
+     width: 170px;
+     height: 200px;
+     border: 2px solid #ccc;
+     padding: 10px;
+ }
+
+ .gallery-container {
+     margin-top: 80px;
+     text-align: center;
+     margin-bottom: 20px;
+ }
+
+ .gallery-paragraph {
+     text-align: center;
+     margin-top: 20px;
+     padding: 10px;
+     font-size: 25px;
+ }
+
+
+ /*team*/
+ .team {
+     margin-bottom: 62px;
+     width: 100%;
+     background-size: cover;
+     background-position: center;
+ }
+
+ .team h1 {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 55px;
+     margin-bottom: 30px;
+ }
+
+ .team h1 span {
+     color: maroon;
+     margin-left: 15px;
+     font-family: 'Segoe Script';
+ }
+
+ .team h1 span::after {
+     content: '';
+     width: 100%;
+     height: 2px;
+     background: #fac031;
+     display: block;
+     position: relative;
+     bottom: 15px;
+ }
+
+ .team .team_box {
+     width: 95%;
+     margin-top: 5rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+     top: 20%;
+ }
+
+ .team .team_box .profile {
+     width: 221px;
+     height: 214px;
+     border-radius: 50%;
+     margin: 0 15px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+     box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+     transition: 0.4s;
+ }
+
+ .team .team_box .profile:hover {
+     border-radius: 20px;
+     height: 270px;
+ }
+
+ .team .team_box .profile img {
+     width: 170px;
+     height: 170px;
+     object-fit: cover;
+     object-position: center;
+     border-radius: 50%;
+     cursor: pointer;
+     box-shadow: 0 0 rgba(0, 0, 0, 0.5);
+     z-index: 2;
+     transition: 0.4s;
+ }
+
+ .team .team_box .profile:hover img {
+     border-radius: 20px;
+     margin-top: -230px;
+
+ }
+
+ .team .team_box .profile .info {
+     position: absolute;
+     text-align: center;
+     top: 25%;
+     transition: 0.4s;
+ }
+
+ .info .bio {
+     font-weight: bold;
+     font-family: serif;
+     font-size: 25px;
+ }
+
+ .team .team_box .profile:hover .info {
+     top: 40%;
+ }
+
+ .team .team_box .profile .info .name {
+     color: maroon;
+     margin-bottom: 15px;
+     font-size: 30px;
+ }
+
+ .team .team_box .profile .info .bio {
+     width: 70%;
+     color: black;
+     text-align: center;
+     margin: 0 auto 10px auto;
+ }
+
+ .team .team_box .profile .info .team_icon i {
+     margin: 10px 5px 5px 0;
+     cursor: pointer;
+     transition: 0.3s;
+     color: black;
+ }
+
+ .team .team_box .profile .info .team_icon i:hover {
+     color: #fac031;
+ }

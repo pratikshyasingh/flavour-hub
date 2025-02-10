@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavourHub</title>
+    <link rel="stylesheet" href="/style/base.css">
+    <link rel="stylesheet" href="/style/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="navbar bg">
+            <div class="navbar-logo">
+                <div class="logo"></div>
+                <div class="logo-name"></div>
+            </div>
+            </nav>
+            <div class="navbar-item">
+                <p><a href="">Home</a></p>
+                <p><a href="">About us</a></p>
+                <p><a href="">Catagory</a></p>
+                <p><a href="">Contact us</a></p>
+            </div>
+            <div class="search-bar">
+                <input placeholder="Search on Flavour Hub" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="icons">
+                <div class="menu-bar">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="bell-icon">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+                <div class="profile">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+    </header>
+
+
+
+    <!-- footer -->
+
+    <footer>
+        <div class="footer-container">
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Feedback Form -->
+            <div class="feedback">
+                <h3>Give Feedback</h3>
+                <textarea id="feedback-text" placeholder="Share your experience..." rows="3"></textarea>
+                <button onclick="submitFeedback()">Submit</button>
+                <p id="feedback-message"></p>
+            </div>
+
+            <!-- Scrolling Bar (Featured Dishes) -->
+            <div class="scrolling-bar">
+                <h3>Featured Dishes</h3>
+                <div class="scroll-container" id="scrollContainer">
+                    <div class="scroll-content" id="scrollContent">
+                        <div class="item">🍕 Pizza</div>
+                        <div class="item">🍔 Burger</div>
+                        <div class="item">🥗 Salad</div>
+                        <div class="item">🍜 Noodles</div>
+                        <div class="item">🍣 Sushi</div>
+                        <div class="item">🍕 Pizza</div>
+                        <div class="item">🍔 Burger</div>
+                        <div class="item">🥗 Salad</div>
+                        <div class="item">🍜 Noodles</div>
+                        <div class="item">🍣 Sushi</div>
+                        <div class="item">🍕 Pizza</div>
+                        <div class="item">🍔 Burger</div>
+                        <div class="item">🥗 Salad</div>
+                        <div class="item">🍜 Noodles</div>
+                        <div class="item">🍣 Sushi</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interesting Section -->
+            <div class="special">
+                <h3>Chef's Special</h3>
+                <p>Try our exclusive <strong>Truffle Pasta</strong>! Limited time only.</p>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            © 2025 Flavour Hub-Taste of Home, Delivered to Your Doorstep. All Rights Reserved |
+            <a href="#">Privacy Policy</a>
+        </div>
+
+    </footer>
+
+    <script src="/script/common.js"></script>
+
+
+</body>
+
+</html>
