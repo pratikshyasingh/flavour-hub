@@ -1,3 +1,4 @@
+-- category
 INSERT INTO category (category_id, category_name, category_description, category_image_url, created_by, updated_by)
 VALUES (UUID(), 'Beverages', 'Drinks and beverages', 'https://example.com/images/beverages.jpg', 'admin', 'admin');
 
