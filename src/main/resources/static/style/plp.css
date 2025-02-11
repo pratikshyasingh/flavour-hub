@@ -3,12 +3,22 @@
     background: #253D2B;
 }
 
+.catagories {
+    margin-top: 136px;
+}
+
+.catagories h2 {
+    font-family: 'Georgia', serif;
+    text-align: center;
+    font-size: x-large;
+}
+
 .category-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     max-width: 1200px;
-    margin: 100px;
+    margin: 50px 97px 66px 113px;
 }
 
 .category-card {
