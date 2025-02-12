@@ -28,7 +28,7 @@
  .button-container {
      display: flex;
      gap: 20px;
-     background: rgba(255, 255, 255, 0.3);
+     /* background: rgba(255, 255, 255, 0.3); */
      backdrop-filter: blur(15px);
      padding: 30px 40px;
      border-radius: 20px;
@@ -65,16 +65,18 @@
  }
 
  .login-btn {
-     background: linear-gradient(135deg, #00c6ff, #0072ff);
+     /* background-color: yellowgreen; */
+     background: linear-gradient(135deg, #ffb300, rgb(231, 117, 11));
      color: white;
-     box-shadow: 0px 6px 12px rgba(0, 114, 255, 0.4);
+     box-shadow: 0px 2px 5px rgba(105, 244, 147, 0.4);
  }
 
  .signup-btn {
      /* background: linear-gradient(135deg, #ff758c, #ff7eb3); */
      color: white;
-     box-shadow: 0px 6px 12px rgba(255, 117, 140, 0.4);
-     background: linear-gradient(135deg, #e72a4f, #9d3c3c);
+     box-shadow: 0px 6px 12px rgba(255, 237, 117, 0.4);
+     background: linear-gradient(135deg, orangered, #ffe600);
+     /* background-color: orangered; */
  }
 
  .login-btn::before,
