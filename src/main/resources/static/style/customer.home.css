@@ -25,6 +25,54 @@
      align-items: center;
  }
 
+ .scroll-offer {
+     font-family: Arial, sans-serif;
+     width: 100%;
+     height: 2rem;
+     overflow: hidden;
+     background-color: #bda421;
+     ;
+     color: #333333;
+     position: relative;
+     top: 68px;
+ }
+
+ .scroll-text-wrapper {
+     display: flex;
+     animation: scroll 20s linear infinite;
+ }
+
+ .scroll-text {
+     display: flex;
+     gap: 40px;
+     white-space: nowrap;
+     font-size: 20px;
+     font-weight: bold;
+     text-transform: uppercase;
+ }
+
+ @keyframes scroll {
+     0% {
+         transform: translateX(0);
+     }
+
+     100% {
+         transform: translateX(-100%);
+     }
+ }
+
+ .scroll-text span {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-size: 18px;
+ }
+
+ .scroll-text span i {
+     font-size: 30px;
+ }
+
+
  .button-container {
      display: flex;
      gap: 20px;

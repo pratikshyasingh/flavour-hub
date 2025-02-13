@@ -73,8 +73,8 @@ header {
 }
 
 .navbar-item a:hover {
-    color: #0ade0a !important;
-    border-bottom: 3px solid #0ade0a;
+    color: #98ff98 !important;
+    border-bottom: 3px solid #98ff98;
 }
 
 .icons {
@@ -87,19 +87,7 @@ header {
     padding-top: 1rem;
 }
 
-.menu-bar:hover {
-    color: #98ff98;
-}
-
-.bell-icon:hover {
-    color: #98ff98;
-}
-
-.profile:hover {
-    color: #98ff98;
-}
-
-.cart:hover {
+.hover-effect:hover {
     color: #98ff98;
 }
 
