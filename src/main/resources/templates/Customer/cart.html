@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link rel="stylesheet" href="/style/cart.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="cart-header">
+            <h1>Your Cart</h1>
+            <span id="cart-count">3 items</span>
+        </div>
+
+        <div id="cart-items">
+            <!-- Cart items will be dynamically injected here -->
+        </div>
+
+        <!-- Coupon Section -->
+        <div class="section">
+            <h3>Have a Coupon?</h3>
+            <input type="text" id="coupon-code" placeholder="Enter coupon code">
+            <button class="btn-apply" onclick="applyCoupon()">Apply Coupon</button>
+            <div id="coupon-message" style="color: green;"></div>
+        </div>
+
+        <!-- Delivery Location Section -->
+        <div class="section">
+            <h3>Delivery Location</h3>
+            <input type="text" id="delivery-location" placeholder="Enter your delivery address">
+        </div>
+
+        <!-- Payment Option Section -->
+        <div class="section">
+            <h3>Payment Options</h3>
+            <select id="payment-option">
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="cod">Cash on Delivery</option>
+            </select>
+        </div>
+
+        <!-- Global Customization Section -->
+        <div class="global-customization">
+            <h4>Global Customization for All Dishes</h4>
+            <div class="customize-option">
+                <label for="size">Size:</label>
+                <select id="size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div class="customize-option">
+                <label for="spiciness">Spiciness Level:</label>
+                <input type="radio" id="mild" name="spiciness" value="mild">
+                <label for="mild">Mild</label>
+                <input type="radio" id="medium-spicy" name="spiciness" value="medium">
+                <label for="medium-spicy">Medium</label>
+                <input type="radio" id="spicy" name="spiciness" value="spicy">
+                <label for="spicy">Spicy</label>
+            </div>
+            <div class="customize-option">
+                <label for="extras">Extras:</label>
+                <input type="checkbox" id="cheese" name="extras" value="cheese"> Extra Cheese
+                <input type="checkbox" id="olives" name="extras" value="olives"> Olives
+                <input type="checkbox" id="bacon" name="extras" value="bacon"> Bacon
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <span class="total-price">Total: $<span id="total-price">0.00</span></span>
+            <button class="btn-checkout" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+    <script src="/script/cart.js"></script>
+
+</body>
+
+</html>
