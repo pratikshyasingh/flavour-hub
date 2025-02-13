@@ -4,242 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Kitchen - Login & Sign Up</title>
+    <title>Fancy Login & Sign Up Buttons</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            flex-direction: column;
-            text-align: center;
-            color: #333;
-        }
-
-        .welcome {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #ff6347;
-            margin-bottom: 5px;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            width: 350px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #ff6347;
-            margin-bottom: 20px;
-        }
-
-        .container h2 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-        }
-
-        .form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form input {
-            margin: 10px 0;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .form input:focus {
-            border-color: #ff6347;
-            box-shadow: 0 0 8px rgba(255, 99, 71, 0.3);
-        }
-
-        .form button {
-            background-color: #ff6347;
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .form button:hover {
-            background-color: #e5533d;
-        }
-
-        .toggle-text {
-            margin-top: 15px;
-            font-size: 1rem;
-        }
-
-        .toggle-text a {
-            color: #ff6347;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .toggle-text a:hover {
-            text-decoration: underline;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        /* Dish Slider */
-        .dish-slider {
-            width: 100%;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             overflow: hidden;
-            margin-top: 20px;
-            padding: 10px 0;
         }
 
-        .dish-slider .dish-track {
+        .button-container {
             display: flex;
-            justify-content: center;
             gap: 20px;
-            animation: scroll 12s linear infinite;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            animation: fadeIn 1s ease-in-out;
         }
 
-        .dish-item {
-            text-align: center;
-            min-width: 90px;
-        }
-
-        .dish-slider img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid #ff6347;
-            padding: 5px;
-        }
-
-        .dish-name {
-            font-size: 0.9rem;
-            color: #444;
-            margin-top: 5px;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(100%);
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
             }
 
-            100% {
-                transform: translateX(-100%);
+            to {
+                opacity: 1;
+                transform: scale(1);
             }
         }
 
-        /* About Section */
-        .about {
-            margin-top: 30px;
-            font-size: 1rem;
-            color: #555;
-            padding: 0 20px;
-            max-width: 400px;
+        .login-btn,
+        .signup-btn {
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            transition: all 0.4s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: white;
+            box-shadow: 0px 6px 12px rgba(0, 114, 255, 0.4);
+        }
+
+        .signup-btn {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            box-shadow: 0px 6px 12px rgba(255, 117, 140, 0.4);
+        }
+
+        .login-btn::before,
+        .signup-btn::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        .login-btn:hover::before,
+        .signup-btn:hover::before {
+            width: 300%;
+            height: 300%;
+        }
+
+        .login-btn:hover,
+        .signup-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 
 <body>
-
-    <!-- Welcome Message -->
-    <div class="welcome">Welcome to Cloud Kitchen! 🍽️</div>
-    <div class="tagline">Delicious Meals Delivered to Your Doorstep</div>
-
-    <div class="container">
-        <div class="logo">Cloud Kitchen</div>
-
-        <!-- Login Form -->
-        <div id="loginForm">
-            <h2>Login to Your Account</h2>
-            <form class="form" onsubmit="return validateLogin()">
-                <input type="email" id="loginEmail" placeholder="Enter your email" required>
-                <input type="password" id="loginPassword" placeholder="Enter your password" required>
-                <button type="submit">Sign In</button>
-            </form>
-            <p class="toggle-text">Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a></p>
-        </div>
-
-        <!-- Sign Up Form -->
-        <div id="signupForm" class="hidden">
-            <h2>Create an Account</h2>
-            <form class="form" onsubmit="return validateSignUp()">
-                <input type="text" id="signupName" placeholder="Full Name" required>
-                <input type="email" id="signupEmail" placeholder="Email" required>
-                <input type="password" id="signupPassword" placeholder="Password" required>
-                <button type="submit">Sign Up</button>
-            </form>
-            <p class="toggle-text">Already have an account? <a href="#" onclick="toggleForms()">Sign In</a></p>
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <div class="about">
-        <p>Cloud Kitchen delivers fresh, chef-prepared meals right to your home. Choose from a variety of cuisines and
-            enjoy hassle-free dining!</p>
+    <div class="button-container">
+        <button class="login-btn" onclick="openLoginPage()">Login</button>
+        <button class="signup-btn" onclick="openLoginPage()">Sign Up</button>
     </div>
 
     <script>
-        function validateLogin() {
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-
-            if (!email || !password) {
-                alert('Please fill in both email and password.');
-                return false;
-            }
-
-            window.location.href = 'dashboard.html';
-            return false;
-        }
-
-        function validateSignUp() {
-            const name = document.getElementById('signupName').value;
-            const email = document.getElementById('signupEmail').value;
-            const password = document.getElementById('signupPassword').value;
-
-            if (!name || !email || !password) {
-                alert('Please fill in all fields.');
-                return false;
-            }
-
-            window.location.href = 'index.html';
-            return false;
-        }
-
-        function toggleForms() {
-            document.getElementById('loginForm').classList.toggle('hidden');
-            document.getElementById('signupForm').classList.toggle('hidden');
+        function openLoginPage() {
+            window.location.href = 'login.html';
         }
     </script>
-
 </body>
 
 </html>
