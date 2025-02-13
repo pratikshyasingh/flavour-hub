@@ -16,68 +16,21 @@
             <input type="checkbox"> Non Veg only
         </aside>
         <div class="products-section">
-            <h2>Matching items</h2>
+            <h2 data-th-text="|Matching items for ${category.categoryName}|"></h2>
             <div class="product-container">
-                <article class="product">
+                <article class="product" data-th-each="item : ${category.foodItems}">
                     <div class="img-container">
                         <img src="/images/butterpaneer1.jpg" alt="">
                     </div>
                     <div class="product-title">
-                        <h4>Butter paneer</h4>
+                        <h4 data-th-text="${item.foodName}"></h4>
                         <p>&#8377;230.00</p>
                     </div>
                     <div class="product-action">
                         <a href="#">Add to cart</a>
                     </div>
                 </article>
-                <article class="product">
-                    <div class="img-container">
-                        <img src="/images/butterpaneer1.jpg" alt="">
-                    </div>
-                    <div class="product-title">
-                        <h4>Butter paneer</h4>
-                        <p>&#8377;230.00</p>
-                    </div>
-                    <div class="product-action">
-                        <a href="#">Add to cart</a>
-                    </div>
-                </article>
-                <article class="product">
-                    <div class="img-container">
-                        <img src="/images/butterpaneer1.jpg" alt="">
-                    </div>
-                    <div class="product-title">
-                        <h4>Butter paneer</h4>
-                        <p>&#8377;230.00</p>
-                    </div>
-                    <div class="product-action">
-                        <a href="#">Add to cart</a>
-                    </div>
-                </article>
-                <article class="product">
-                    <div class="img-container">
-                        <img src="/images/butterpaneer1.jpg" alt="">
-                    </div>
-                    <div class="product-title">
-                        <h4>Butter paneer</h4>
-                        <p>&#8377;230.00</p>
-                    </div>
-                    <div class="product-action">
-                        <a href="#">Add to cart</a>
-                    </div>
-                </article>
-                <article class="product">
-                    <div class="img-container">
-                        <img src="/images/butterpaneer1.jpg" alt="">
-                    </div>
-                    <div class="product-title">
-                        <h4>Butter paneer</h4>
-                        <p>&#8377;230.00</p>
-                    </div>
-                    <div class="product-action">
-                        <a href="#">Add to cart</a>
-                    </div>
-                </article>
+
             </div>
         </div>
 
