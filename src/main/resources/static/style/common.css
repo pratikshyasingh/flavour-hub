@@ -2,6 +2,11 @@ header {
     position: relative;
 }
 
+body {
+    background-color: cornsilk;
+    overflow-x: hidden;
+}
+
 .navbar {
     position: fixed;
     width: 100%;
