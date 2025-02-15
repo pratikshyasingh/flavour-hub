@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AdminController {
     @GetMapping("/admin")
     String adminHome() {
-        return "customer/admin/home";
+        return "admin/home";
     }
 
     @GetMapping("/admin/order")
     String adminOrder() {
-        return "customer/admin/order";
+        return "admin/order";
     }
 
 }
