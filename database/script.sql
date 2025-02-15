@@ -198,5 +198,12 @@ CREATE TABLE review_and_rating(
 --     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 -- );
 
-
-
+CREATE TABLE tag (
+    tag_id VARCHAR(255) PRIMARY KEY,
+    tag_name VARCHAR(100) NOT NULL,
+    tag_description TEXT NULL,
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_by VARCHAR(50),
+    updated_by VARCHAR(50)
+);
