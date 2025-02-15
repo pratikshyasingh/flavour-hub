@@ -1,4 +1,4 @@
-package edu.rims.flavour_hub.controller;
+package edu.rims.flavour_hub.controller1;
 
 import java.util.List;
 
