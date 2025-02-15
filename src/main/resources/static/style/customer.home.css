@@ -171,10 +171,10 @@
      height: 300px;
  }
 
- body {
+ /* body {
      background-color: cornsilk;
      overflow-x: hidden;
- }
+ } */
 
  .left-align-wrapper {
      width: 100%;
