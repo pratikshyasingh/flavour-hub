@@ -31,10 +31,26 @@
         <div id="signupForm" class="hidden">
             <h2>Create an Account</h2>
             <form class="form" onsubmit="return validateSignUp()">
-                <input type="text" id="signupName" placeholder="Full Name" required>
-                <input type="email" id="signupEmail" placeholder="Email" required>
-                <input type="password" id="signupPassword" placeholder="Password" required>
+                <div class="name">
+                    <input type="text" id="signupName" placeholder="Full Name" required>
+                    <input type="email" id="signupEmail" placeholder="Email" required>
+                    <input type="password" id="signupPassword" placeholder="Password" required>
+                </div>
+                <div class="address">
+                    <h3>Address</h3>
+                    <input type="text" id="street" placeholder="Street Address" required>
+                    <input type="text" id="city" placeholder="City" required>
+                    <input type="text" id="state" placeholder="State/Province" required>
+                    <input type="text" id="zip" placeholder="ZIP Code" required>
+                    <select id="country" required>
+                        <option value="">Select Country</option>
+                        <option value="US">India</option>
+                        <option value="CA">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                    </select>
+                </div>
                 <button type="submit">Sign Up</button>
+
             </form>
             <p class="toggle-text">Already have an account? <a href="#" onclick="toggleForms()">Sign In</a></p>
         </div>

@@ -19,16 +19,18 @@
             <h2 data-th-text="|Matching items for ${category.categoryName}|"></h2>
             <div class="product-container">
                 <article class="product" data-th-each="item : ${category.foodItems}">
-                    <div class="img-container">
-                        <img src="/images/butterpaneer1.jpg" alt="">
-                    </div>
-                    <div class="product-title">
-                        <h4 data-th-text="${item.foodName}"></h4>
-                        <p>&#8377;230.00</p>
-                    </div>
-                    <div class="product-action">
-                        <a href="#">Add to cart</a>
-                    </div>
+                    <a data-th-href="|/customer/food_item/pdp?food_item=${item.foodId}|" style="all: unset;">
+                        <div class="img-container">
+                            <img src="/images/butterpaneer1.jpg" alt="">
+                        </div>
+                        <div class="product-title">
+                            <h4 data-th-text="${item.foodName}"></h4>
+                            <p>&#8377;230.00</p>
+                        </div>
+                        <div class="product-action">
+                            <a href="#">Add to cart</a>
+                        </div>
+                    </a>
                 </article>
 
             </div>
