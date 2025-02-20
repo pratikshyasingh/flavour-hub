@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head data-th-replace="~{admin/common :: head}"></head>
+
+<body>
+    <link rel="stylesheet" href="/style/admin.product.css">
+    <div data-th-replace="~{admin/common :: sidebar}"></div>
+
+
+    <!--home-content-->
+    <section class="home-section">
+        <div class="container">
+            <h2><i class="fa-solid fa-wheat-awn"></i>Product Management</h2>
+            <div class="actions">
+                <button class="btn btn-add" onclick="openModal()">Add Product</button>
+                <input type="text" id="search" placeholder="Search Product..." onkeyup="searchProduct()">
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTable">
+                        <!-- Dynamic Rows Here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" id="productModal">
+            <div class="modal-content">
+                <h3>Add/Edit Product</h3>
+                <label>Name: <input type="text" id="productName"></label>
+                <label>Category: <input type="text" id="productCategory"></label>
+                <label>Price: <input type="number" id="productPrice"></label>
+                <label>Stock: <input type="number" id="productStock"></label>
+                <button onclick="saveProduct()">Save</button>
+                <button onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+
+        <script src="/script/admin.product.js"></script>
+    </section>
+</body>
+
+</html>
