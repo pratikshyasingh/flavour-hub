@@ -22,7 +22,7 @@ public class LoginController {
         return "customer/login";
     }
 
-    @PostMapping("/sign-up")
+    @PostMapping("/customer/sign-up")
     public String signUp(@ModelAttribute User user) {
         user.setCreatedDate(LocalDateTime.now());
         user.setUpdatedDate(LocalDateTime.now());
