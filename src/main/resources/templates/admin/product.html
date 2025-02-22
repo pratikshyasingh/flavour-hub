@@ -1,0 +1,109 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head data-th-replace="~{admin/common :: head}"></head>
+
+<body>
+    <link rel="stylesheet" href="/style/admin.product.css">
+    <div data-th-replace="~{admin/common :: sidebar}"></div> -->
+
+
+<!--home-content-->
+/
+<!-- Dynamic Rows Here -->
+<!-- </tbody>
+                </table>
+            </div>
+        </div> -->
+
+<!-- Modal -->
+<!-- <div class="modal" id="productModal">
+            <div class="form">
+                <h3>Add/Edit Product</h3>
+                <form id="productForm">
+                    <label>Food Id: <input type="text" id="foodId"></label>
+                    <label>Category Id: <input type="text" id="categoryId"></label>
+                    <label>Food Name: <input type="text" id="productName"></label>
+                    <label>Food Description: <input type="text" id="productDescription"></label>
+                    <label>Price: <input type="number" id="productPrice"></label>
+                    <label>Food Status:
+                        <select id="productStatus"> 
+                            <option value="Available">Available</option>
+                            <option value="Unavailable">Unavailable</option>
+                        </select>
+                    </label>
+                    <button type="submit">Submit</button>
+                    <button type="button" onclick="closeModal()">Cancel</button>
+                </form>
+            </div>
+        </div> -->
+<!-- End of Modal (Form Section) -->
+<!-- 
+        <script src="/script/admin.product.js"></script>
+    </section>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head data-th-replace="~{admin/common :: head}"></head>
+
+<body>
+    <link rel="stylesheet" href="/style/admin.product.css">
+    <div data-th-replace="~{admin/common :: sidebar}"></div>
+
+    <!--home-content-->
+    <section class="home-section">
+        <div class="container">
+            <h2><i class="fa-solid fa-wheat-awn"></i>Product Management</h2>
+            <div class="actions">
+                <button class="btn btn-add" onclick="openModal()">Add Product</button>
+                <input type="text" id="search" placeholder="Search Product..." onkeyup="searchProduct()">
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Food Id</th>
+                            <th>Category Id</th>
+                            <th>Food Name</th>
+                            <th>Food Description</th>
+                            <th>Price</th>
+                            <th>Food Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTable">
+                        <!-- Dynamic Rows Here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" id="productModal">
+            <form id="productForm" class="modal-content">
+                <h3>Add/Edit Product</h3>
+                <label>Food Id: <input type="text" id="foodId"></label>
+                <label>Category Id: <input type="text" id="categoryId"></label>
+                <label>Food Name: <input type="text" id="productName"></label>
+                <label>Food Description: <input type="text" id="productDescription"></label>
+                <label>Price: <input type="number" id="productPrice"></label>
+                <label>Food Status:
+                    <select id="productStatus">
+                        <option value="Available">Available</option>
+                        <option value="Unavailable">Unavailable</option>
+                    </select>
+                </label>
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeModal()">Cancel</button>
+            </form>
+        </div>
+        <!-- End of Modal (Form Section) -->
+
+        <script src="/script/admin.product.js"></script>
+    </section>
+</body>
+
+</html>
