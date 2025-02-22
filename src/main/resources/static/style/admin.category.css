@@ -207,12 +207,31 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /* background-color: #f4f4f4; */
     overflow-y: hidden;
 }
 
+.home-section h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #a71e34;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 25px;
+    margin-left: 15px;
+}
+
+#search {
+    flex-grow: 1;
+    max-width: 400px;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 .container {
-    /* max-width: 80%; */
     margin: 20px auto;
     background: #fff;
     padding: 20px;
@@ -223,22 +242,23 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 20px;
     margin-bottom: 20px;
 }
 
-input[type="text"] select {
+input[type="text"],
+select {
     padding: 10px;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
     font-size: 14px;
-
 }
 
 input[type="text"][placeholder="Search category..."] {
     width: 400px;
-    /* Adjust this value as needed */
 }
 
 button {
@@ -250,7 +270,6 @@ button {
     border-radius: 5px;
     font-size: 14px;
 }
-
 
 button:hover {
     background: #218838;
@@ -274,6 +293,7 @@ button:hover {
 }
 
 table {
+    margin-top: 20px;
     width: 100%;
     border-collapse: collapse;
 }
@@ -291,14 +311,13 @@ td {
 }
 
 th {
-    background: #007bff;
+    background: #c41e3a;
     color: white;
 }
 
 /* Modal Styling */
 .modal {
     display: none;
-    /* Hide by default */
     position: fixed;
     top: 0;
     left: 0;
@@ -318,11 +337,9 @@ th {
     position: relative;
 }
 
-/* Centered modal heading */
 .modal-content h2 {
     text-align: center;
     margin-bottom: 15px;
-    /* Added space below heading */
 }
 
 .modal-overlay {
@@ -341,28 +358,18 @@ th {
     cursor: pointer;
 }
 
-/* Improved form spacing and alignment */
+/* Form Styling */
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* Added gap for better spacing */
 }
 
-/* Styled labels for better readability */
 label {
     font-size: 14px;
     font-weight: bold;
 }
 
-/* Created a form group to manage spacing between inputs */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-/* Set save button to full width and added spacing */
 button[type="submit"] {
     width: 100%;
     margin-top: 10px;
