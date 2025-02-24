@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    width: 85%;
+    width: 53%;
     max-width: 1200px;
     margin: 50px auto;
     padding: 30px;
@@ -40,9 +40,20 @@ body {
     color: #888;
 }
 
+.cart {
+    display: flex;
+    flex-direction: row;
+}
+
+#cart-items {
+    display: flex;
+    gap: 30px;
+}
+
 .cart-item {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     background-color: #fff;
     padding: 20px;
@@ -122,7 +133,7 @@ body {
 
 .section input,
 .section select {
-    width: 100%;
+    width: 40%;
     padding: 12px;
     margin-top: 10px;
     border-radius: 6px;
@@ -181,7 +192,7 @@ body {
 }
 
 .customize-option select {
-    width: 100%;
+    width: 120px;
     padding: 12px;
     border-radius: 6px;
     font-size: 16px;
