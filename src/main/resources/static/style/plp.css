@@ -44,7 +44,11 @@ main {
     padding: 20px;
     justify-content: center;
     min-height: 400px;
-    /* Ensures a proper height for the row */
+}
+
+.product-container a {
+    all: unset;
+
 }
 
 .product {

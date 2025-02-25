@@ -20,9 +20,6 @@ header .navbar {
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     max-width: 1000px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     padding: 20px;
 }
 
@@ -68,7 +65,6 @@ header .navbar {
     cursor: pointer;
     font-size: 18px;
     border-radius: 5px;
-    transition: 0.3s;
 }
 
 .quantity-selector button:hover {
@@ -80,7 +76,8 @@ header .navbar {
     font-size: 20px;
 }
 
-.add-to-cart {
+.add-to-cart,
+.order {
     background: #d35400;
     color: white;
     border: none;
@@ -91,6 +88,16 @@ header .navbar {
     transition: 0.3s;
     display: block;
     margin-top: 15px;
+}
+
+.btn {
+    display: grid;
+    grid-template-columns: 165px 1fr 360px;
+    gap: 10px;
+}
+
+.order {
+    background-color: green !important;
 }
 
 .add-to-cart:hover {
