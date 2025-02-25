@@ -271,6 +271,36 @@ footer {
     margin-bottom: -40px;
 }
 
+<<<<<<< HEAD
+/* .shopping-cart {
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    border: 1px solid;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--box-shadow);
+    width: 30rem;
+    background: #fff;
+
+}
+
+.shopping-cart .box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin: 1rem 0;
+}
+
+.shopping-cart img {
+    height: 10rem;
+} */
+
+
+/* scroll */
+=======
+>>>>>>> 725bc7fbf65c49b1282d8305c57f480e19d0383e
 html {
     scroll-behavior: smooth;
 }
