@@ -271,7 +271,7 @@ footer {
     margin-bottom: -40px;
 }
 
-.shopping-cart {
+/* .shopping-cart {
     position: absolute;
     top: 100%;
     right: 2rem;
@@ -294,4 +294,10 @@ footer {
 
 .shopping-cart img {
     height: 10rem;
+} */
+
+
+/* scroll */
+html {
+    scroll-behavior: smooth;
 }
