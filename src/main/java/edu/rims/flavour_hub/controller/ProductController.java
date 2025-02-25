@@ -1,5 +1,7 @@
 package edu.rims.flavour_hub.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +18,7 @@ public class ProductController {
     @Autowired
     private CategoryRepository categoryRepository;
     @Autowired
-    private Food_itemRepository Food_itemRepository;
+    private Food_itemRepository food_itemRepository;
 
     @GetMapping("/customer/plp")
     String customerPlp() {
@@ -37,9 +39,16 @@ public class ProductController {
 
     @GetMapping("/customer/food_item/pdp")
     String getProductByFoodId(@RequestParam("food_item") String foodId, Model model) {
-        FoodItem food_item = Food_itemRepository.findById(foodId).orElseThrow();
+        FoodItem food_item = food_itemRepository.findById(foodId).orElseThrow();
         model.addAttribute("food_item", food_item);
         return "customer/pdp";
+    }
+
+    @GetMapping("/product/search")
+    String searchProduct(@RequestParam("search") String foodItemName, Model model) {
+        List<FoodItem> foodItems = food_itemRepository.findByFoodNameContainingIgnoreCase(foodItemName);
+        model.addAttribute("foodItems", foodItems);
+        return "customer/plp";
     }
 
 }

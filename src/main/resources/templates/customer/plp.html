@@ -15,7 +15,8 @@
             <input type="checkbox"> Veg only
             <input type="checkbox"> Non Veg only
         </aside>
-        <div class="products-section">
+
+        <div class="products-section" data-th-if="${param.category != null}">
             <h2 data-th-text="|Matching items for ${category.categoryName}|"></h2>
             <div class="product-container">
                 <article class="product" data-th-each="item : ${category.foodItems}">
@@ -23,18 +24,48 @@
                         <div class="img-container">
                             <img src="/images/butterpaneer1.jpg" alt="">
                         </div>
-                    </a>
-                    <div class="product-title">
-                        <h4 data-th-text="${item.foodName}"></h4>
-                        <p>&#8377;230.00</p>
-                    </div>
-                    <a data-th-href="|/customer/food_item/pdp?food_item=${item.foodId}|">
+                        <div class="product-title">
+                            <h4 data-th-text="${item.foodName}"></h4>
+                            <p data-th-text="|&#8377; ${item.price}|"></p>
+                        </div>
                         <div class="product-action">
                             <button>Add to cart</button>
                             <button>View</button>
                         </div>
                     </a>
                 </article>
+
+                <div data-th-if="${#lists.size(category.foodItems) == 0}">
+                    <h1>No Item Available</h1>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="products-section" data-th-if="${param.search != null}">
+            <h2 data-th-text="|Matching items for ${param.search}|"></h2>
+            <div class="product-container">
+                <article class="product" data-th-each="item : ${foodItems}">
+                    <a data-th-href="|/customer/food_item/pdp?food_item=${item.foodId}|" style="all: unset;">
+                        <div class="img-container">
+                            <img src="/images/butterpaneer1.jpg" alt="">
+                        </div>
+                        <div class="product-title">
+                            <h4 data-th-text="${item.foodName}"></h4>
+                            <p data-th-text="|&#8377; ${item.price}|"></p>
+                        </div>
+                        <div class="product-action">
+                            <a href="#">Add to cart</a>
+                        </div>
+                    </a>
+                </article>
+
+                <div data-th-if="${#lists.size(foodItems) == 0}">
+                    <h1>No Item Available</h1>
+
+                </div>
 
             </div>
         </div>
