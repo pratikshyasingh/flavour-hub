@@ -1,5 +1,7 @@
 package edu.rims.flavour_hub.controller;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -11,15 +13,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import edu.rims.flavour_hub.entity.Category;
+import edu.rims.flavour_hub.entity.FoodItem;
 import edu.rims.flavour_hub.repository.CategoryRepository;
+import edu.rims.flavour_hub.repository.Food_itemRepository;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 
 public class AdminController {
     @Autowired
     private CategoryRepository categoryRepository;
+
+    @Autowired
+    private Food_itemRepository food_itemRepository;
 
     @GetMapping("/admin/home")
     String adminHome() {
@@ -44,14 +55,33 @@ public class AdminController {
     }
 
     @PostMapping("/admin/category")
-    public String categoryAdd(@ModelAttribute Category category) {
-        categoryRepository.save(category);
+    public String categoryAdd(@ModelAttribute Category category,
+            @RequestParam("categoryImageFile") MultipartFile file) throws IOException {
+        if (!file.isEmpty()) {
+            FileOutputStream fileOutputStream = new FileOutputStream("upload_images/" + file.getOriginalFilename());
+            fileOutputStream.write(file.getBytes());
+            fileOutputStream.close();
+
+        }
+        // categoryRepository.save(category);
         return "redirect:/admin/category";
     }
 
     @GetMapping("/admin/product")
-    String adminProduct() {
+    String adminProduct(Model model) {
+        List<Category> categories = categoryRepository.findAll();
+        List<FoodItem> foodItems = food_itemRepository.findAll();
+        model.addAttribute("categories", categories);
+        model.addAttribute("foodItems", foodItems);
         return "admin/product";
+    }
+
+    @PostMapping("/admin/product")
+    public String productAdd(@ModelAttribute FoodItem foodItem, @RequestParam String categoryId) {
+        Category category = categoryRepository.findById(categoryId).orElseThrow();
+        foodItem.setCategory(category);
+        food_itemRepository.save(foodItem);
+        return "redirect:/admin/product";
     }
 
 }

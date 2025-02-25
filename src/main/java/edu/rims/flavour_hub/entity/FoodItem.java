@@ -13,6 +13,7 @@ public class FoodItem extends Auditable {
 
     @Id
     @Column(name = "food_id", length = 255, nullable = false)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String foodId;
 
     @ManyToOne
