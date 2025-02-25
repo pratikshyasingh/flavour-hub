@@ -1,0 +1,64 @@
+.table-container {
+    padding: 20px;
+    background: cornsilk;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container table thead {
+    background: #c41e3a;
+    color: #fff;
+}
+
+.table-container table thead th {
+    padding: 12px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.table-container table tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.table-container table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table-container table tbody td {
+    padding: 12px;
+    font-size: 16px;
+    color: #333;
+}
+
+.see-all-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.see-all-button button {
+    padding: 10px 20px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.see-all-button button:hover {
+    background-color: maroon;
+}

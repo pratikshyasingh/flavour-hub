@@ -1,0 +1,144 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head data-th-replace="~{admin/common :: head}"></head>
+
+
+<body>
+    <link rel="stylesheet" href="/style/admin.category.css">
+    <div data-th-replace="~{admin/common :: sidebar}"></div> -->
+
+<!--home-content-->
+<!-- <section class="home-section">
+        <div class="container">
+            <div class="header">
+                <input type="text" id="search" placeholder="Search category...">
+                <button id="addCategoryBtn">Add Category</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>CategoryID</th>
+                        <th>Category Name</th>
+                        <th>Category Description</th>
+                        <th>Category Image</th>
+                        <th>Category Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="categoryTableBody">
+                    <tr>
+                        <td>1</td>
+                        <td>Pizza</td>
+                        <td>Active</td>
+                        <td>2024-02-18</td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> -->
+
+<!-- Modal -->
+<!-- <div id="categoryDialog" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add Category</h2>
+                <form id="categoryForm">
+                    <label for="categoryName">Category Name:</label>
+                    <input type="text" id="categoryName" required>
+
+                    <label for="categoryStatus">Status:</label>
+                    <select id="categoryStatus">
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="/script/admin.category.js"></script>
+    </section>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head data-th-replace="~{admin/common :: head}"></head>
+
+<body>
+    <link rel="stylesheet" href="/style/admin.category.css">
+    <div data-th-replace="~{admin/common :: sidebar}"></div>
+
+    <!-- Home Content -->
+    <section class="home-section">
+        <h2><i class="fa-solid fa-list"></i> Category</h2>
+        <div class="container">
+            <div class="header">
+                <input type="text" id="search" placeholder="Search category...">
+                <button id="addCategoryBtn">Add Category</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category Name</th>
+                        <th>Category Description</th>
+                        <th>Category Image</th>
+                        <th>Category Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="categoryTableBody">
+                    <tr data-th-each="category : ${categories}">
+                        <td data-th-text="${category.categoryName}"></td>
+                        <td data-th-text="${category.categoryDescription}"></td>
+                        <td></td>
+                        <td data-th-text="${category.foodStatus}"></td>
+                        <td></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal -->
+        <div id="categoryDialog" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add Category</h2>
+
+                <!-- Updated: Changed div.form to a form element -->
+                <form id="categoryForm" method="post" action="/admin/category">
+
+                    <label for="categoryName">Category Name:</label>
+                    <input type="text" name="categoryName" id="categoryName" required>
+
+                    <label for="categoryDescription">Category Description:</label>
+                    <input type="text" name="categoryDescription" id="categoryDescription" required>
+
+                    <label for="categoryImage">Category Image:</label>
+                    <input type="file" name="categoryImageUrl" id="categoryImage">
+
+                    <label for="categoryStatus">Category Status:</label>
+                    <select id="categoryStatus">
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="/script/admin.category.js"></script>
+    </section>
+</body>
+
+</html>

@@ -10,7 +10,7 @@
     <header data-th-replace="~{customer/common :: header}"></header>
 
     <div class="pdp-section">
-        <h2 data-th-text="|Matching items for ${food_item.foodName}|"></h2>
+        <h2 data-th-text="|${food_item.foodName}|"></h2>
         <div class="container">
             <article class="product">
                 <img src="/images/burger.jpg" alt="Delicious Dish" class="product-image">
@@ -20,27 +20,28 @@
                     </div>
                     <p class="product-description">
                     <h4 data-th-text="${food_item.foodDescription}"></h4>
-
                     </p>
-                    <p class="product-price">Rs 80</p>
+                    <p class="product-price">&#8377; 80</p>
                     <div class="ratings">★★★★★ 4.8/5</div>
                     <div class="quantity-selector">
                         <button onclick="changeQuantity(-1)">-</button>
                         <span id="quantity">1</span>
                         <button onclick="changeQuantity(1)">+</button>
                     </div>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <div class="btn">
+                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                        <button class="order" onclick="order()">Order</button>
+                    </div>
                 </div>
             </article>
         </div>
         <div class="delivery-notification">
             <p><strong>Estimated Delivery Time:</strong> 20-30 minutes</p>
             <p><strong>Live Order Tracking Available</strong></p>
-            <p>Get free delivery on orders above <strong>Rs 50</strong>!</p>
+            <p>Get free delivery on orders above <strong>&#8377; 50</strong>!</p>
             <p>Delivery by <strong>Flavour Hub Express</strong></p>
         </div>
     </div>
-
     <footer data-th-replace="~{customer/common :: footer}"></footer>
     <script src="/script/pdp.js"></script>
 </body>
