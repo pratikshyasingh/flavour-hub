@@ -1,8 +1,8 @@
 // Example cart items
 const cart = [
-    { id: 1, name: "Pizza Margherita", price: 12.99, quantity: 2, img: "https://via.placeholder.com/100" },
-    { id: 2, name: "Pasta Alfredo", price: 8.99, quantity: 1, img: "https://via.placeholder.com/100" },
-    { id: 3, name: "Caesar Salad", price: 6.49, quantity: 3, img: "https://via.placeholder.com/100" }
+    { id: 1, name: "Pizza Margherita", price: 12.99, quantity: 2, img: "/images/burger.jpg" },
+    { id: 2, name: "Pasta Alfredo", price: 8.99, quantity: 1, img: "/images/burger.jpg" },
+    { id: 3, name: "Caesar Salad", price: 6.49, quantity: 3, img: "/images/burger.jpg" }
 ];
 
 // Coupon code

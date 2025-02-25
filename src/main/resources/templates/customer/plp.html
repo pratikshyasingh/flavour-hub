@@ -20,7 +20,7 @@
             <h2 data-th-text="|Matching items for ${category.categoryName}|"></h2>
             <div class="product-container">
                 <article class="product" data-th-each="item : ${category.foodItems}">
-                    <a data-th-href="|/customer/food_item/pdp?food_item=${item.foodId}|" style="all: unset;">
+                    <a data-th-href="|/customer/food_item/pdp?food_item=${item.foodId}|">
                         <div class="img-container">
                             <img src="/images/butterpaneer1.jpg" alt="">
                         </div>
@@ -29,7 +29,8 @@
                             <p data-th-text="|&#8377; ${item.price}|"></p>
                         </div>
                         <div class="product-action">
-                            <a href="#">Add to cart</a>
+                            <button>Add to cart</button>
+                            <button>View</button>
                         </div>
                     </a>
                 </article>
