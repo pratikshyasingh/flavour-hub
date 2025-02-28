@@ -21,11 +21,6 @@ public class LoginController {
 
     @PostMapping("/customer/sign-up")
     public String signUp(@ModelAttribute User user) {
-        // user.setCreatedDate(LocalDateTime.now());
-        // user.setUpdatedDate(LocalDateTime.now());
-        // user.setCreatedBy("user");
-        // user.setUpdatedBy("user");
-        // userRepository.save(user);
         return "redirect:/customer/login";
     }
 

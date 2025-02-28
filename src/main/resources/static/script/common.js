@@ -21,3 +21,9 @@ window.addEventListener('scroll', function () {
 function openLoginPage() {
     window.location.href = 'login.html';
 }
+
+let shoppingCart = document.querySelector('.shopping-cart');
+
+document.querySelector('#cart-btn').onclick = () => {
+    shoppingCart.classList.toggle('active');
+}
