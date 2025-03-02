@@ -13,7 +13,7 @@
         <h2 data-th-text="|${food_item.foodName}|"></h2>
         <div class="container">
             <article class="product">
-                <img src="/images/burger.jpg" alt="Delicious Dish" class="product-image">
+                <img data-th-src="|/foodItem/image/${food_item.foodId}|" alt="Delicious Dish" class="product-image">
                 <div class="product-details">
                     <div class="product-title">
                         <h3 data-th-text="${food_item.foodName}"></h3>

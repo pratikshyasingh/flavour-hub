@@ -1,8 +1,10 @@
 package edu.rims.flavour_hub.controller;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -56,13 +58,20 @@ public class AdminController {
     @PostMapping("/admin/category")
     public String categoryAdd(@ModelAttribute Category category,
             @RequestParam("categoryImageFile") MultipartFile file) throws IOException {
+
         if (!file.isEmpty()) {
-            FileOutputStream fileOutputStream = new FileOutputStream("upload_images/" + file.getOriginalFilename());
+            String originalFilename = file.getOriginalFilename();
+            String extName = originalFilename.substring(originalFilename.lastIndexOf("."));
+
+            String fileName = "upload_images/" + UUID.randomUUID().toString() + extName;
+
+            FileOutputStream fileOutputStream = new FileOutputStream(fileName);
             fileOutputStream.write(file.getBytes());
             fileOutputStream.close();
+            category.setCategoryImageUrl(fileName);
 
         }
-        // categoryRepository.save(category);
+        categoryRepository.save(category);
         return "redirect:/admin/category";
     }
 
@@ -76,9 +85,22 @@ public class AdminController {
     }
 
     @PostMapping("/admin/product")
-    public String productAdd(@ModelAttribute FoodItem foodItem, @RequestParam String categoryId) {
+    public String productAdd(@ModelAttribute FoodItem foodItem, @RequestParam String categoryId,
+            @RequestParam("foodItemImageFile") MultipartFile file) throws IOException {
         Category category = categoryRepository.findById(categoryId).orElseThrow();
         foodItem.setCategory(category);
+        if (!file.isEmpty()) {
+            String originalFilename = file.getOriginalFilename();
+            String extName = originalFilename.substring(originalFilename.lastIndexOf("."));
+
+            String fileName = "upload_images/" + UUID.randomUUID().toString() + extName;
+
+            FileOutputStream fileOutputStream = new FileOutputStream(fileName);
+            fileOutputStream.write(file.getBytes());
+            fileOutputStream.close();
+            foodItem.setFoodItemImageUrl(fileName);
+
+        }
         food_itemRepository.save(foodItem);
         return "redirect:/admin/product";
     }

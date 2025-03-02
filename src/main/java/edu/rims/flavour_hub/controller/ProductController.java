@@ -1,12 +1,16 @@
 package edu.rims.flavour_hub.controller;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.rims.flavour_hub.entity.Category;
 import edu.rims.flavour_hub.entity.FoodItem;
@@ -49,6 +53,30 @@ public class ProductController {
         List<FoodItem> foodItems = food_itemRepository.findByFoodNameContainingIgnoreCase(foodItemName);
         model.addAttribute("foodItems", foodItems);
         return "customer/plp";
+    }
+
+    @GetMapping(value = "/category/image/{categoryId}", produces = { "image/jpg", "image/png", "image/jpeg" })
+    @ResponseBody
+    byte[] getCategoryImage(@PathVariable String categoryId) throws IOException {
+        Category category = categoryRepository.findById(categoryId).orElseThrow();
+        String categoryImageUrl = category.getCategoryImageUrl();
+        if (categoryImageUrl != null && categoryImageUrl.startsWith("http")) {
+            return null;
+        }
+        FileInputStream fis = new FileInputStream(categoryImageUrl);
+        return fis.readAllBytes();
+    }
+
+    @GetMapping(value = "/foodItem/image/{foodItemId}", produces = { "image/jpg", "image/png", "image/jpeg" })
+    @ResponseBody
+    byte[] getfoodItemImage(@PathVariable String foodItemId) throws IOException {
+        FoodItem foodItem = food_itemRepository.findById(foodItemId).orElseThrow();
+        String foodItemImageUrl = foodItem.getFoodItemImageUrl();
+        if (foodItemImageUrl != null && foodItemImageUrl.startsWith("http")) {
+            return null;
+        }
+        FileInputStream fis = new FileInputStream(foodItemImageUrl);
+        return fis.readAllBytes();
     }
 
 }
