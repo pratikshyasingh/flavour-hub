@@ -139,7 +139,7 @@
                 <div class="food-container" data-th-each="category : ${categories}">
                     <a data-th-href="|/customer/category/plp?category=${category.categoryId}|">
                         <div class="food-image">
-                            <img src="/images/samosha.jpg" alt="samosha">
+                            <img data-th-src="|/category/image/${category.categoryId}|" alt="samosha">
                         </div>
                     </a>
                     <div class="food-name" data-th-text="${category.categoryName}"></div>

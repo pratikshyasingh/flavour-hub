@@ -197,6 +197,11 @@ CREATE TABLE review_and_rating(
 --     unit ENUM('KG', 'LTR', 'PCS') NOT NULL,
 --     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 -- );
-
-
-
+CREATE TABLE widget (
+    widget_id VARCHAR(255) PRIMARY KEY,
+    widget_name VARCHAR(100) NOT NULL,
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_by VARCHAR(50),
+    updated_by VARCHAR(50)
+);

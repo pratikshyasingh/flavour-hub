@@ -29,7 +29,9 @@
                     <tr data-th-each="category : ${categories}">
                         <td data-th-text="${category.categoryName}"></td>
                         <td data-th-text="${category.categoryDescription}"></td>
-                        <td></td>
+                        <td>
+                            <img data-th-src="|/category/image/${category.categoryId}|" alt="samosha" height="40">
+                        </td>
                         <td data-th-text="${category.foodStatus}"></td>
                         <td>
                             <button class="edit-btn">Edit</button>
