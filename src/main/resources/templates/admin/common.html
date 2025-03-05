@@ -50,10 +50,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        <span class="link-name">Logout</span>
-                    </a>
+                    <form action="/logout" method="post">
+                        <a href="#">
+                            <button type="submit" style="all: unset;">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                <span class="link-name">Logout</span>
+                            </button>
+                            <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
+                        </a>
+                    </form>
                 </li>
             </ul>
         </div>

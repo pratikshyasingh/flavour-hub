@@ -15,13 +15,14 @@
 
     <div class="container">
         <div class="logo">Flavour Hub</div>
-
+        <h2 data-th-if="${param.error} != null">Invalid Username/Password</h2>
         <!-- Login Form -->
         <div id="loginForm">
             <h2>Login to Your Account</h2>
-            <form class="form" onsubmit="return validateLogin()">
-                <input type="email" id="loginEmail" placeholder="Enter your email" required>
-                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+            <form class="form" method="post" action="/customer/login">
+                <input type="text" name="username" id="loginEmail" placeholder="Enter your email" required>
+                <input type="password" name="password" id="loginPassword" placeholder="Enter your password" required>
+                <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
                 <button type="submit">Sign In</button>
             </form>
             <p class="toggle-text">Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a></p>

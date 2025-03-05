@@ -68,7 +68,7 @@
                         <option value="Active">Active</option>
                         <option value="Inactive">Inactive</option>
                     </select>
-
+                    <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
                     <button type="submit">Save</button>
                 </form>
             </div>
