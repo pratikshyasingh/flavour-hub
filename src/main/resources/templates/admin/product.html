@@ -76,6 +76,7 @@
                         <option value="Unavailable">Unavailable</option>
                     </select>
                 </label>
+                <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
                 <button type="submit">Submit</button>
                 <button type="button" onclick="closeModal()">Cancel</button>
             </form>

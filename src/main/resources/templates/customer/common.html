@@ -40,12 +40,21 @@
                 <div class="menu-bar hover-effect">
                     <i class="fa-solid fa-bars"></i>
                 </div>
-                <div class="bell-icon hover-effect">
+
+                <div class="menu-bar hover-effect">
+                    <form action="/logout" method="post">
+                        <button type="submit" style="all: unset;">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </button>
+                        <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
+                    </form>
+                </div>
+                <!-- <div class="bell-icon hover-effect">
                     <i class="fa-regular fa-bell"></i>
                 </div>
                 <div class="profile hover-effect">
                     <i class="fa-solid fa-user"></i>
-                </div>
+                </div> -->
                 <div class="cart hover-effect">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>
