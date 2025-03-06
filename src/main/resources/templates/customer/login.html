@@ -41,6 +41,7 @@
                     <input type="text" id="state" placeholder="State" required>
                     <input type="text" id="zip" placeholder="Pin Code" required>
                 </div>
+                <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
                 <button type="submit">Sign Up</button>
 
             </form>

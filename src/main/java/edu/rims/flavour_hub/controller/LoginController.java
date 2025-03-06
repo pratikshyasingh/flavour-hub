@@ -1,6 +1,7 @@
 package edu.rims.flavour_hub.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,6 +15,9 @@ public class LoginController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PasswordEncoder encoder;
+
     @GetMapping("/customer/login")
     String customerLogin() {
         return "customer/login";
@@ -25,7 +29,8 @@ public class LoginController {
         // user.setUpdatedDate(LocalDateTime.now());
         // user.setCreatedBy("user");
         // user.setUpdatedBy("user");
-        // userRepository.save(user);
+        user.setUserPassword(encoder.encode(user.getUserPassword()));
+        userRepository.save(user);
         return "redirect:/customer/login";
     }
 
