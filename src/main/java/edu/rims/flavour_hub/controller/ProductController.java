@@ -20,21 +20,11 @@ public class ProductController {
     @Autowired
     private Food_itemRepository food_itemRepository;
 
-    @GetMapping("/customer/plp")
-    String customerPlp() {
-        return "customer/plp";
-    }
-
     @GetMapping("/customer/category/plp")
     String getProductByCategoryId(@RequestParam("category") String categoryId, Model model) {
         Category category = categoryRepository.findById(categoryId).orElseThrow();
         model.addAttribute("category", category);
         return "customer/plp";
-    }
-
-    @GetMapping("/customer/pdp")
-    String customerPdp() {
-        return "customer/pdp";
     }
 
     @GetMapping("/customer/food_item/pdp")
