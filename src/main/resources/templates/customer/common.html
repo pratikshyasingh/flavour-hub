@@ -41,7 +41,7 @@
                     <i class="fa-solid fa-bars"></i>
                 </div>
 
-                <div class="menu-bar hover-effect">
+                <div class="menu-bar hover-effect" sec:authorize="isAuthenticated()" title="logout">
                     <form action="/logout" method="post">
                         <button type="submit" style="all: unset;">
                             <i class="fa-solid fa-right-from-bracket"></i>
@@ -49,6 +49,12 @@
                         <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
                     </form>
                 </div>
+
+                <div class="menu-bar hover-effect" sec:authorize="hasRole('ADMIN')" title="admin dashboard">
+                    <a href="/admin/home" style="all: unset;"><i class="fa-solid fa-gauge-high"></i></a>
+
+                </div>
+
                 <!-- <div class="bell-icon hover-effect">
                     <i class="fa-regular fa-bell"></i>
                 </div>
