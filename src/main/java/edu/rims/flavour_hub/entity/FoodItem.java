@@ -23,6 +23,9 @@ public class FoodItem extends Auditable {
     @Column(name = "food_name", length = 100)
     private String foodName;
 
+    @Column(name = "food_item_image_url", length = 250)
+    private String foodItemImageUrl;
+
     @Column(name = "food_description", columnDefinition = "TEXT")
     private String foodDescription;
 

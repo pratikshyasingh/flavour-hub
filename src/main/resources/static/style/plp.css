@@ -26,7 +26,7 @@ main {
     object-fit: contain;
 }
 
-.product-action button {
+.product-action a {
     padding: 10px 23px;
     background-color: maroon;
     color: white;

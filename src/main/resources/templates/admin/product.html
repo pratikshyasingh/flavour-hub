@@ -24,6 +24,7 @@
                             <th>Food Name</th>
                             <th>Food Description</th>
                             <th>Price</th>
+                            <th>Product Image</th>
                             <th>Food Status</th>
                             <th>Actions</th>
                         </tr>
@@ -35,6 +36,9 @@
                             <td data-th-text="${item.foodDescription}"></td>
                             <td data-th-text="${item.price}"></td>
                             <td data-th-text="${item.foodItemStatus}"></td>
+                            <td>
+                                <img data-th-src="|/foodItem/image/${item.foodId}|" alt="samosha" height="40">
+                            </td>
                             <td>
                                 <button class="edit-btn">Edit</button>
                                 <button class="delete-btn">Delete</button>
@@ -48,7 +52,8 @@
 
         <!-- Modal -->
         <div class="modal" id="productModal">
-            <form id="productForm" class="modal-content" method="post" action="/admin/product">
+            <form id="productForm" class="modal-content" method="post" action="/admin/product"
+                enctype="multipart/form-data">
                 <h3>Add/Edit Product</h3>
 
                 <label>Category Name:
@@ -62,12 +67,16 @@
                 <label>Food Name: <input type="text" name="foodName" id="productName"></label>
                 <label>Food Description: <input type="text" name="foodDescription" id="productDescription"></label>
                 <label>Price: <input type="number" name="price" id="productPrice"></label>
+                <label for="productImage">Product Image:</label>
+                <input type="file" name="foodItemImageFile" id="product" accept="image/png, image/jpeg, image/jpg">
+
                 <label>Food Status:
                     <select id="productStatus">
                         <option value="Available">Available</option>
                         <option value="Unavailable">Unavailable</option>
                     </select>
                 </label>
+                <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
                 <button type="submit">Submit</button>
                 <button type="button" onclick="closeModal()">Cancel</button>
             </form>

@@ -22,14 +22,14 @@
                 <article class="product" data-th-each="item : ${category.foodItems}">
                     <a data-th-href="|/customer/food_item/pdp?food_item=${item.foodId}|">
                         <div class="img-container">
-                            <img src="/images/butterpaneer1.jpg" alt="">
+                            <img data-th-src="|/foodItem/image/${item.foodId}|" alt="">
                         </div>
                         <div class="product-title">
                             <h4 data-th-text="${item.foodName}"></h4>
                             <p data-th-text="|&#8377; ${item.price}|"></p>
                         </div>
                         <div class="product-action">
-                            <button>Add to cart</button>
+                            <a href="/customer/cart">Add to cart</a>
                             <button>View</button>
                         </div>
                     </a>
@@ -47,15 +47,18 @@
                 <article class="product" data-th-each="item : ${foodItems}">
                     <a data-th-href="|/customer/food_item/pdp?food_item=${item.foodId}|" style="all: unset;">
                         <div class="img-container">
-                            <img src="/images/butterpaneer1.jpg" alt="">
+                            <img data-th-src="|/foodItem/image/${item.foodId}|" alt="">
+
                         </div>
                         <div class="product-title">
                             <h4 data-th-text="${item.foodName}"></h4>
                             <p data-th-text="|&#8377; ${item.price}|"></p>
                         </div>
                         <div class="product-action">
-                            <a href="#">Add to cart</a>
+                            <a href="/customer/cart">Add to cart</a>
+                            <button>View</button>
                         </div>
+
                     </a>
                 </article>
 

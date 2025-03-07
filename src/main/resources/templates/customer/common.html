@@ -40,13 +40,33 @@
                 <div class="menu-bar hover-effect">
                     <i class="fa-solid fa-bars"></i>
                 </div>
-                <div class="bell-icon hover-effect">
+
+                <div class="menu-bar hover-effect" sec:authorize="isAuthenticated()" title="logout">
+                    <form action="/logout" method="post">
+                        <button type="submit" style="all: unset;">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </button>
+                        <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
+                    </form>
+                </div>
+
+                <div class="menu-bar hover-effect" sec:authorize="hasRole('ADMIN')" title="admin dashboard">
+                    <a href="/admin/home" style="all: unset;"><i class="fa-solid fa-gauge-high"></i></a>
+
+                </div>
+
+                <!-- <div class="bell-icon hover-effect">
                     <i class="fa-regular fa-bell"></i>
                 </div>
                 <div class="profile hover-effect">
                     <i class="fa-solid fa-user"></i>
+<<<<<<< HEAD
                 </div>
                 <div class="cart hover-effect" id="cart-btn">
+=======
+                </div> -->
+                <div class="cart hover-effect">
+>>>>>>> 2125becaf959d6740fe48ccdbc5d7f6aaa900593
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>
             </div>
