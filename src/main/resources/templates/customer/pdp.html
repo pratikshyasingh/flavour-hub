@@ -29,7 +29,7 @@
                         <button onclick="changeQuantity(1)">+</button>
                     </div>
                     <div class="btn">
-                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                        <a data-th-href="|/customer/cart?item=${food_item.foodId}|">Add to cart</a>
                         <button class="order" onclick="order()">Order</button>
                     </div>
                 </div>

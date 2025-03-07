@@ -15,7 +15,6 @@ import edu.rims.flavour_hub.entity.OrderItem;
 import edu.rims.flavour_hub.entity.User;
 import edu.rims.flavour_hub.repository.Food_itemRepository;
 import edu.rims.flavour_hub.repository.OrderRepository;
-import edu.rims.flavour_hub.repository.UserRepository;
 import edu.rims.flavour_hub.service.UserService;
 
 @Controller
@@ -42,4 +41,5 @@ public class CartController {
         orderRepository.save(order);
         return "customer/cart";
     }
+
 }
