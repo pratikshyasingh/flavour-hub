@@ -25,15 +25,13 @@ public class LoginController {
 
     @PostMapping("/customer/sign-up")
     public String signUp(@ModelAttribute User user) {
-<<<<<<< HEAD
-=======
+
         // user.setCreatedDate(LocalDateTime.now());
         // user.setUpdatedDate(LocalDateTime.now());
         // user.setCreatedBy("user");
         // user.setUpdatedBy("user");
         user.setUserPassword(encoder.encode(user.getUserPassword()));
         userRepository.save(user);
->>>>>>> 2125becaf959d6740fe48ccdbc5d7f6aaa900593
         return "redirect:/customer/login";
     }
 
