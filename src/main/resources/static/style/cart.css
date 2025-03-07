@@ -10,6 +10,13 @@ body {
     color: #333;
 }
 
+.img-outline img {
+    height: 77px;
+    position: absolute;
+    top: 2px;
+    right: 386px;
+}
+
 .container {
     width: 53%;
     max-width: 1200px;
@@ -18,6 +25,7 @@ body {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .cart-header {
