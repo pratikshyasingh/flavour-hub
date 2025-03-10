@@ -73,7 +73,6 @@ public class CartController {
         User user = userService.getUser(username);
         Order order = orderRepository
                 .findByUserUserIdAndOrderStatus(user.getUserId(), OrderStatus.CART).orElseThrow();
-
         order.setOrderStatus(OrderStatus.CONFIRMED);
 
         orderRepository.save(order);

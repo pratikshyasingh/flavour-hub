@@ -99,7 +99,6 @@ public class AdminController {
             fileOutputStream.write(file.getBytes());
             fileOutputStream.close();
             foodItem.setFoodItemImageUrl(fileName);
-
         }
         food_itemRepository.save(foodItem);
         return "redirect:/admin/product";
