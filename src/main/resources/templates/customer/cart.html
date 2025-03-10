@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cart</title>
-    <link rel="stylesheet" href="/style/cart.css">
-</head>
+<head data-th-replace="~{customer/common :: head}"></head>
 
 <body>
+    <link rel="stylesheet" href="/style/cart.css">
+
     <div class="container">
         <div class="img-outline">
             <img src="/images/outline-img.jpg" alt="">
@@ -19,18 +16,38 @@
         </div>
 
         <div class="cart">
-            <div id="cart-items">
-                <!-- Cart items will be dynamically injected here -->
+            <div data-th-if="${order == null}">
+                No item in cart
             </div>
+
+            <div data-th-if="${order != null}">
+
+                <div id="cart-items" data-th-each="orderItem : ${order.orderItems}">
+                    <div class="cart-item">
+                        <img data-th-src="|/foodItem/image/${orderItem.foodItem.foodId}|" alt="Pizza Margherita">
+                        <div class="cart-item-details">
+                            <div class="cart-item-name" data-th-text="${orderItem.foodItem.foodName}"></div>
+                            <div class="cart-item-price"
+                                data-th-text="|&#8377;${orderItem.foodItem.price} x ${orderItem.orderItemQuantity}|">
+                            </div>
+                        </div>
+                        <div class="cart-item-actions">
+                            <a data-th-href="|/customer/cart/remove?orderItem=${orderItem.orderItemId}|"
+                                class="btn-remove">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- Coupon Section -->
-        <div class="section">
+        <!-- <div class="section">
             <h3>Have a Coupon?</h3>
             <input type="text" id="coupon-code" placeholder="Enter coupon code">
             <button class="btn-apply" onclick="applyCoupon()">Apply Coupon</button>
             <div id="coupon-message" style="color: green;"></div>
-        </div>
+        </div> -->
 
         <!-- Delivery Location Section -->
         <div class="section">
@@ -77,13 +94,13 @@
         </div>
 
         <div class="cart-footer">
-            <span class="total-price">Total: $<span id="total-price">0.00</span></span>
-            <a href="/customer/placeOrder">
-                <button class="btn-checkout" onclick="checkout()">Place Order</button>
+            <span class="total-price">Total: &#8377;<span id="total-price"
+                    data-th-text="${order == null ? 0.0 : order.totalPrice}"></span></span>
+            <a href="/customer/placeOrder" data-th-if="${order != null}" class="btn-checkout">
+                Place Order
             </a>
         </div>
     </div>
-    <script src="/script/cart.js"></script>
 
 </body>
 

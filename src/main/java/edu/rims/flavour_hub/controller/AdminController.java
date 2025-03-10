@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 // import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import edu.rims.flavour_hub.constant.FoodStatus;
 import edu.rims.flavour_hub.entity.Category;
 import edu.rims.flavour_hub.entity.FoodItem;
 import edu.rims.flavour_hub.repository.CategoryRepository;
@@ -100,6 +101,14 @@ public class AdminController {
             foodItem.setFoodItemImageUrl(fileName);
 
         }
+        food_itemRepository.save(foodItem);
+        return "redirect:/admin/product";
+    }
+
+    @GetMapping("/admin/product/remove")
+    public String removeFoodItem(@RequestParam("product") String itemId) {
+        FoodItem foodItem = food_itemRepository.findById(itemId).orElseThrow();
+        foodItem.setFoodItemStatus(FoodStatus.UNAVAILABLE);
         food_itemRepository.save(foodItem);
         return "redirect:/admin/product";
     }

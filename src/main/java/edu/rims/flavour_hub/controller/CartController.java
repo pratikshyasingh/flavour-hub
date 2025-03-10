@@ -1,10 +1,12 @@
 package edu.rims.flavour_hub.controller;
 
 import java.security.Principal;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,6 +19,7 @@ import edu.rims.flavour_hub.repository.Food_itemRepository;
 import edu.rims.flavour_hub.repository.OrderRepository;
 import edu.rims.flavour_hub.repository.UserRepository;
 import edu.rims.flavour_hub.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class CartController {
@@ -28,13 +31,18 @@ public class CartController {
     @Autowired
     private Food_itemRepository food_itemRepository;
 
-    @GetMapping("/customer/cart/cart")
-    String customerCart() {
+    @GetMapping("/customer/cart")
+    String customerCart(Principal principal, Model model) {
+        String username = principal.getName();
+        User user = userService.getUser(username);
+        Order order = orderRepository
+                .findByUserUserIdAndOrderStatus(user.getUserId(), OrderStatus.CART).orElse(null);
+        model.addAttribute("order", order);
         return "customer/cart";
     }
 
-    @GetMapping("/customer/cart")
-    String customerCart(@RequestParam("item") String itemId, Principal principal) {
+    @GetMapping("/customer/cart/add")
+    String customerCart(@RequestParam("item") String itemId, Principal principal, HttpServletRequest request) {
         String username = principal.getName();
         User user = userService.getUser(username);
         Order order = orderRepository
@@ -45,11 +53,30 @@ public class CartController {
         OrderItem orderItem = new OrderItem(foodItem);
         order.addOrderItem(orderItem);
         orderRepository.save(order);
-        return "customer/cart";
+        return "redirect:/customer/cart";
+    }
+
+    @GetMapping("/customer/cart/remove")
+    public String removeItem(@RequestParam("orderItem") String orderItemId, Principal principal) {
+        String username = principal.getName();
+        User user = userService.getUser(username);
+        Order order = orderRepository
+                .findByUserUserIdAndOrderStatus(user.getUserId(), OrderStatus.CART).orElseThrow();
+        order.removeOrderItem(orderItemId);
+        orderRepository.save(order);
+        return "redirect:/customer/cart";
     }
 
     @GetMapping("/customer/placeOrder")
-    String customerPlaceOrder() {
+    String customerPlaceOrder(Principal principal) {
+        String username = principal.getName();
+        User user = userService.getUser(username);
+        Order order = orderRepository
+                .findByUserUserIdAndOrderStatus(user.getUserId(), OrderStatus.CART).orElseThrow();
+
+        order.setOrderStatus(OrderStatus.CONFIRMED);
+
+        orderRepository.save(order);
         return "customer/placeOrder";
     }
 
