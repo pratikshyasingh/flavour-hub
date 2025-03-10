@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import edu.rims.flavour_hub.constant.FoodStatus;
 import edu.rims.flavour_hub.entity.Category;
 import edu.rims.flavour_hub.entity.FoodItem;
 import edu.rims.flavour_hub.repository.CategoryRepository;
@@ -26,7 +27,8 @@ public class ProductController {
 
     @GetMapping("/customer/category/plp")
     String getProductByCategoryId(@RequestParam("category") String categoryId, Model model) {
-        Category category = categoryRepository.findById(categoryId).orElseThrow();
+        Category category = categoryRepository.findCategoryByIdAndFoodItemStatus(categoryId, FoodStatus.AVAILABLE)
+                .orElseThrow();
         model.addAttribute("category", category);
         return "customer/plp";
     }
@@ -40,7 +42,8 @@ public class ProductController {
 
     @GetMapping("/product/search")
     String searchProduct(@RequestParam("search") String foodItemName, Model model) {
-        List<FoodItem> foodItems = food_itemRepository.findByFoodNameContainingIgnoreCase(foodItemName);
+        List<FoodItem> foodItems = food_itemRepository.findByFoodNameContainingIgnoreCaseAndFoodItemStatus(foodItemName,
+                FoodStatus.AVAILABLE);
         model.addAttribute("foodItems", foodItems);
         return "customer/plp";
     }

@@ -57,7 +57,7 @@ input[type="text"][placeholder="Search category..."] {
 }
 
 button {
-    padding: 10px 15px;
+    padding: 13px 18px;
     border: none;
     background: #28a745;
     color: white;
@@ -72,7 +72,7 @@ button:hover {
 
 .edit-btn {
     background: green;
-    color: black;
+    color: white;
 }
 
 .edit-btn:hover {
@@ -80,7 +80,7 @@ button:hover {
 }
 
 .delete-btn {
-    background: #dc3545;
+    background: maroon;
 }
 
 .delete-btn:hover {
@@ -106,7 +106,7 @@ td {
 }
 
 th {
-    background: #c41e3a;
+    background: maroon;
     color: white;
 }
 

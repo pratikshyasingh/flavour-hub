@@ -15,7 +15,7 @@ body {
     height: 100%;
     width: 240px;
     /* background: #c41e3a; */
-    background: maroon;
+    background: linear-gradient(black, rgb(255, 0, 0));
 }
 
 /* .sidebar .logo-details {
@@ -202,7 +202,7 @@ nav .profile-details i {
     font-size: 25px;
 }
 
-.home-section .home-content { 
+.home-section .home-content {
     position: relative;
     padding-top: 11px;
 
