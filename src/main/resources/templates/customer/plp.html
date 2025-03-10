@@ -29,8 +29,10 @@
                             <p data-th-text="|&#8377; ${item.price}|"></p>
                         </div>
                         <div class="product-action">
-                            <a data-th-href="|/customer/cart/add?item=${item.foodId}|">Add to cart</a>
-                            <button>View</button>
+                            <button> <a data-th-href="|/customer/cart?item=${item.foodId}|">Add to cart</a></button>
+                            <button>
+                                <a data-th-href="|/customer/food_item/pdp?food_item=${item.foodId}|">View</a>
+                            </button>
                         </div>
                     </a>
                 </article>
@@ -58,7 +60,6 @@
                             <a data-th-href="|/customer/cart/add?item=${item.foodId}|">Add to cart</a>
                             <button>View</button>
                         </div>
-
                     </a>
                 </article>
 
