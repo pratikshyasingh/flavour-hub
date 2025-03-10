@@ -28,6 +28,11 @@ public class CartController {
     @Autowired
     private Food_itemRepository food_itemRepository;
 
+    @GetMapping("/customer/cart/cart")
+    String customerCart() {
+        return "customer/cart";
+    }
+
     @GetMapping("/customer/cart")
     String customerCart(@RequestParam("item") String itemId, Principal principal) {
         String username = principal.getName();
@@ -42,4 +47,10 @@ public class CartController {
         orderRepository.save(order);
         return "customer/cart";
     }
+
+    @GetMapping("/customer/placeOrder")
+    String customerPlaceOrder() {
+        return "customer/placeOrder";
+    }
+
 }
