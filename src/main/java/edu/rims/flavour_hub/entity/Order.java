@@ -31,13 +31,19 @@ public class Order extends Auditable {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 
-    public void addOrderItem(OrderItem orderItem) {
+    public boolean addOrderItem(OrderItem orderItem) {
         if (orderItems == null) {
             orderItems = new ArrayList<>();
         }
+
+        if (itemExists(orderItem.getFoodItem().getFoodId())) {
+            return false;
+        }
+
         orderItem.setOrder(this);
         orderItems.add(orderItem);
         updateDetails();
+        return true;
     }
 
     private void updateDetails() {
@@ -49,5 +55,25 @@ public class Order extends Auditable {
         }
         this.totalPrice = totalPrice;
         orderQuantity = totalQuantity;
+    }
+
+    private boolean itemExists(String itemId) {
+        for (OrderItem orderItem : orderItems) {
+            if (itemId.equals(orderItem.getFoodItem().getFoodId())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void removeOrderItem(String ordertItemId) {
+        for (OrderItem orderItem : orderItems) {
+            if (orderItem.getOrderItemId().equals(ordertItemId)) {
+                orderItem.setOrder(null);
+                orderItems.remove(orderItem);
+                break;
+            }
+        }
+        updateDetails();
     }
 }

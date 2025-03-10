@@ -31,7 +31,7 @@ td {
 }
 
 th {
-    background-color: #c41e3a;
+    background-color: maroon;
     color: white;
     font-weight: 600;
 
@@ -54,7 +54,7 @@ tr:nth-child(even) td {
 
 } */
 table tr:hover td {
-    background-color: lightcoral;
+    background-color: lightcyan;
     /* Change this color to whatever you prefer */
     cursor: pointer;
     /* Optional: change the cursor to a pointer on hover */
