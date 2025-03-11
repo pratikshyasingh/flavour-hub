@@ -1,4 +1,3 @@
-/*table*/
 .table_header {
     margin: 20px;
     padding: 0;
@@ -6,86 +5,105 @@
     font-family: 'Sans-Serif';
 }
 
+/* Ensuring the table remains scrollable on smaller screens */
 .table_body {
     overflow-x: auto;
     margin-top: 20px;
-
 }
 
+/* Table styling for a modern and structured look */
 table {
     width: 100%;
     border-collapse: collapse;
-    border-spacing: 20px;
+    border-spacing: 0;
+    /* Removed extra space between table elements */
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
 }
 
-
+/* Styling for table headers */
 th,
 td {
     padding: 15px;
     text-align: center;
     border-bottom: 2px solid #ddd;
-
 }
 
+/* Dark maroon background for headers */
 th {
     background-color: maroon;
     color: white;
     font-weight: 600;
-
+    text-transform: uppercase;
+    /* Added for consistency */
 }
 
+/* Alternating row colors for better readability */
 td {
     background-color: #f9f9f9;
-
 }
 
+/* Lighter background for even rows */
 tr:nth-child(even) td {
     background-color: #f1f1f1;
-
 }
 
-/* table {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-
-} */
+/* Hover effect for table rows */
 table tr:hover td {
     background-color: lightcyan;
-    /* Change this color to whatever you prefer */
     cursor: pointer;
-    /* Optional: change the cursor to a pointer on hover */
 }
 
+/* ========== STATUS BADGES ========== */
+/* Center-aligned status badges */
 .status {
-    padding: 0 5rem 1rem;
-    border-radius: 2rem;
+    adding: 5px 15px;
+    /* Adjusted padding for better alignment */
+    border-radius: 20px;
+    /* More rounded for a badge-like look */
     display: inline-block;
-    width: 150px;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Ensures it behaves like a label */
+    min-width: 120px;
+    /* Consistent width */
     text-align: center;
-
+    /* Centers text inside */
+    font-weight: bold;
+    text-transform: uppercase;
+    vertical-align: middle;
+    /* Aligns with other row text */
 }
 
+td .status {
+    display: flex;
+    /* Using flexbox */
+    align-items: center;
+    /* Centering the text inside */
+    justify-content: center;
+}
+
+/* Ensuring the text remains inside the badge */
 .status p {
     margin: 0;
+    padding: 0;
 }
 
-.status:hover p {
-    color: white;
-    background-color: transparent;
+/* Status hover effect */
+.status:hover {
     text-decoration: underline;
+    opacity: 0.8;
+    /* Slight opacity change on hover */
 }
 
-.status.delivered {
+/* Status colors */
+.status.confirmed {
     background-color: lightgreen;
     color: darkgreen;
+}
+
+.status.cart {
+    background-color: lightblue;
+    color: blue;
 }
 
 .status.cancelled {
@@ -93,8 +111,22 @@ table tr:hover td {
     color: red;
 }
 
+/* ========== RESPONSIVE DESIGN ========== */
+/* Mobile optimization for better layout */
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 14px;
+        /* Adjusted font size for smaller screens */
+    }
 
-.status.pending {
-    background-color: lightblue;
-    color: blue;
+    th,
+    td {
+        padding: 10px;
+    }
+
+    .status {
+        font-size: 12px;
+        min-width: 100px;
+        /* Adjusted for smaller screens */
+    }
 }

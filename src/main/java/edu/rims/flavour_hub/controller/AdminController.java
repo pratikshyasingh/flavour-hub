@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import edu.rims.flavour_hub.constant.FoodStatus;
 import edu.rims.flavour_hub.entity.Category;
 import edu.rims.flavour_hub.entity.FoodItem;
+import edu.rims.flavour_hub.entity.Order;
 import edu.rims.flavour_hub.repository.CategoryRepository;
 import edu.rims.flavour_hub.repository.Food_itemRepository;
+import edu.rims.flavour_hub.repository.OrderRepository;
 
 import org.springframework.web.bind.annotation.PostMapping;
 // import org.springframework.web.bind.annotation.RequestBody;
@@ -33,13 +35,18 @@ public class AdminController {
     @Autowired
     private Food_itemRepository food_itemRepository;
 
+    @Autowired
+    private OrderRepository orderRepository;
+
     @GetMapping("/admin/home")
     String adminHome() {
         return "admin/home";
     }
 
     @GetMapping("/admin/order")
-    String adminOrder() {
+    String adminOrder(Model model) {
+        List<Order> orders = orderRepository.findAll();
+        model.addAttribute("orders", orders);
         return "admin/order";
     }
 
