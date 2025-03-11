@@ -1,3 +1,12 @@
+.bg {
+
+    background: #253D2B;
+}
+
+header .navbar {
+    position: static;
+}
+
 .container {
     width: 53%;
     max-width: 1200px;
