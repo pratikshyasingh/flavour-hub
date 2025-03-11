@@ -224,19 +224,3 @@ header .navbar {
 .btn-checkout:hover {
     background-color: #7D3C8C;
 }
-
-.home {
-    text-align: right;
-}
-
-.home-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #379c50;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background 0.3s;
-    text-align: right;
-}
