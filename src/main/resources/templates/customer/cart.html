@@ -20,7 +20,7 @@
 
                 <div id="cart-items" data-th-each="orderItem : ${order.orderItems}">
                     <div class="cart-item">
-                        <img data-th-src="|/foodItem/image/${orderItem.foodItem.foodId}|" alt="Pizza Margherita">
+                        <img data-th-src="|/foodItem/image/${orderItem.foodItem.foodId}|">
                         <div class="cart-item-details">
                             <div class="cart-item-name" data-th-text="${orderItem.foodItem.foodName}"></div>
                             <div class="cart-item-price"
@@ -34,7 +34,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- Delivery Location Section -->
@@ -88,6 +87,7 @@
                 Place Order
             </a>
         </div>
+        <div class="home"><a href=" /customer" class="home-button">Home</a></div>
     </div>
 
 </body>
