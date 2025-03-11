@@ -6,6 +6,15 @@ body {
     padding: 0;
 }
 
+.bg {
+
+    background: #253D2B;
+}
+
+header .navbar {
+    position: static;
+}
+
 .container {
     max-width: 900px;
     margin: 20px auto;
@@ -70,4 +79,20 @@ button {
 
 button:hover {
     background-color: #7a5baf;
+}
+
+.home {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #379c50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
 }
