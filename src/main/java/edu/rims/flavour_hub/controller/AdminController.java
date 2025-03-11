@@ -120,4 +120,9 @@ public class AdminController {
         return "redirect:/admin/product";
     }
 
+    @GetMapping("/admin/widget")
+    String adminWidget() {
+        return "admin/widget";
+    }
+
 }
