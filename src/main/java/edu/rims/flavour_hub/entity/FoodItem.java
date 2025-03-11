@@ -1,5 +1,7 @@
 package edu.rims.flavour_hub.entity;
 
+import java.util.List;
+
 import edu.rims.flavour_hub.constant.FoodStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -35,4 +37,7 @@ public class FoodItem extends Auditable {
     @Enumerated(EnumType.STRING)
     @Column(name = "food_item_status", nullable = false)
     private FoodStatus foodItemStatus = FoodStatus.AVAILABLE;
+
+    @ManyToMany(mappedBy = "foodItems")
+    private List<Widget> widgets;
 }
