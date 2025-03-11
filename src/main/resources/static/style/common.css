@@ -152,7 +152,8 @@ body {
 footer {
     background: #253D2B;
     color: #fff;
-    padding: 30px 0;
+    margin-top: 10px;
+    padding: 10px 0;
     text-align: center;
 }
 
