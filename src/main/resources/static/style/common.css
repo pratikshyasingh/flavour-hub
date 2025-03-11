@@ -263,6 +263,13 @@ footer {
     margin: 2rem;
 }
 
+.bottom-footer {
+    text-align: center;
+    padding: 15px;
+    background: #3f5b46;
+    font-size: 14px;
+    margin-bottom: -40px;
+}
 
 /* scroll */
 html {
