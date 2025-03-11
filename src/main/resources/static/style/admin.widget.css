@@ -1,0 +1,24 @@
+.addWidgetContainer form {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.addWidgetContainer {
+    padding-block: 1rem;
+}
+
+.addWidgetContainer input[type="text"] {
+    width: 70%;
+    padding: 0.8rem 0.5rem;
+}
+
+.addWidgetContainer input[type="submit"] {
+    padding-inline: 2rem;
+    height: 45px;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: #28a745;
+}
