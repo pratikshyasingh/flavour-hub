@@ -18,64 +18,52 @@
 
 .home-content .overview-boxes .box1 {
     background: #ff9999;
-    /* light red */
 }
 
 .home-content .overview-boxes .box2 {
     background: #99ccff;
-    /* light blue */
 }
 
 .home-content .overview-boxes .box3 {
     background: #99ff99;
-    /* light green */
 }
 
 .home-content .overview-boxes .box4 {
     background: #ffff99;
-    /* light yellow */
 }
 
 .home-content .overview-boxes .box5 {
     background: #ffcc99;
-    /* light orange */
 }
 
 .home-content .overview-boxes .box:hover {
     background-color: #ddd;
-    /* change background color on hover */
     transform: scale(1.05);
-    /* slightly increase size on hover */
 }
 
 .home-content .overview-boxes .box .icon1 {
     font-size: 30px;
     color: darkred;
-    /* red */
 }
 
 .home-content .overview-boxes .box .icon2 {
     font-size: 30px;
     color: darkgreen;
-    /* green */
 }
 
 .home-content .overview-boxes .box .icon3 {
     font-size: 30px;
     color: darkblue;
-    /* blue */
 }
 
 .home-content .overview-boxes .box .icon4 {
     font-size: 30px;
     color: maroon;
-    /* yellow */
 }
 
 .home-content .overview-boxes .box .icon5 {
     font-size: 30px;
     color: red;
-    /* magenta */
 }
 
 .home-content .overview-boxes .box_topic {
@@ -99,7 +87,6 @@
 .overview-boxes .indicator i {
     height: 20px;
     width: 20px;
-    /* background: #8fdacb; */
     color: #fff;
     border-radius: 50%;
     font-size: 20px;
@@ -108,27 +95,12 @@
 
 }
 
-/* .overview-boxes .indicator i .fa-arrow-down {
-    background: red;
-} */
 
 .overview-boxes .indicator .text {
     font-size: 12px;
 
 }
 
-/* .overview-boxes .box .fa-cart-shopping {
-    font-size: 32px;
-    font-weight: 500;
-    height: 50px;
-    width: 50px;
-    background: #cce5ff;
-    color: #66b0ff;
-    line-height: 50px;
-    text-align: center;
-    border-radius: 12px;
-} */
-/*sales-content*/
 .home-section .sales-boxes {
     display: flex;
     justify-content: space-between;
@@ -174,7 +146,6 @@
 
 .sales-boxes .button {
     width: 100%;
-    /* background: red; */
     display: flex;
     justify-content: flex-end;
 }

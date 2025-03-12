@@ -2,6 +2,8 @@ package edu.rims.flavour_hub.controller;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.security.PublicKey;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,18 +15,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import edu.rims.flavour_hub.constant.FoodStatus;
+import edu.rims.flavour_hub.constant.WidgetStatus;
 import edu.rims.flavour_hub.entity.Category;
 import edu.rims.flavour_hub.entity.FoodItem;
 import edu.rims.flavour_hub.entity.Order;
+import edu.rims.flavour_hub.entity.Widget;
 import edu.rims.flavour_hub.repository.CategoryRepository;
 import edu.rims.flavour_hub.repository.Food_itemRepository;
 import edu.rims.flavour_hub.repository.OrderRepository;
+import edu.rims.flavour_hub.repository.WidgetRepository;
 
 import org.springframework.web.bind.annotation.PostMapping;
 // import org.springframework.web.bind.annotation.RequestBody;
 // import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 
@@ -37,6 +43,9 @@ public class AdminController {
 
     @Autowired
     private OrderRepository orderRepository;
+
+    @Autowired
+    private WidgetRepository widgetRepository;
 
     @GetMapping("/admin/home")
     String adminHome() {
@@ -121,7 +130,39 @@ public class AdminController {
     }
 
     @GetMapping("/admin/widget")
-    String adminWidget() {
+    public String getWidgets(Model model) {
+        model.addAttribute("widgets", widgetRepository.findAll());
+        return "admin/widget";
+    }
+
+    @PostMapping("/admin/widget/add")
+    public String postMethodName(@RequestParam String widgetName, @RequestParam String widgetId) {
+        Widget widget = new Widget();
+
+        if (widgetId != null && widgetId.isEmpty()) {
+            widget.setWidgetId(widgetId);
+        }
+        System.out.println("value of:" + widgetId);
+        widget.setWidgetName((widgetName));
+        widget.setUpdatedDate(LocalDateTime.now());
+        widgetRepository.save(widget);
+        return "redirect:/admin/widget";
+    }
+
+    @GetMapping("/admin/widget/remove")
+    public String removeWidget(@RequestParam("id") String widgetId) {
+        Widget widget = widgetRepository.findById(widgetId).orElseThrow();
+        widget.setWidgetStatus(WidgetStatus.UNAVAILABLE);
+        widgetRepository.save(widget);
+
+        return "redirect:/admin/widget";
+    }
+
+    @GetMapping("/admin/widget/edit")
+    public String editWidget(@RequestParam("id") String widgetId, Model model) {
+        Widget widget = widgetRepository.findById(widgetId).orElseThrow();
+        model.addAttribute("widget", widget);
+        model.addAttribute("widgets", widgetRepository.findAll());
         return "admin/widget";
     }
 

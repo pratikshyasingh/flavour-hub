@@ -1,24 +1,73 @@
-.addWidgetContainer form {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
+ .addWidgetContainer form {
+     display: flex;
+     flex-direction: row;
+     gap: 23rem;
+ }
 
-.addWidgetContainer {
-    padding-block: 1rem;
-}
+ .addWidgetContainer {
+     padding-block: 1rem;
+ }
 
-.addWidgetContainer input[type="text"] {
-    width: 70%;
-    padding: 0.8rem 0.5rem;
-}
+ .addWidgetContainer input[type="text"] {
+     width: 100%;
+     padding: 0.8rem 0.5rem;
+ }
 
-.addWidgetContainer input[type="submit"] {
-    padding-inline: 2rem;
-    height: 45px;
-    border-radius: 0.5rem;
-    border: none;
-    cursor: pointer;
-    color: white;
-    background: #28a745;
-}
+ .addWidgetContainer input[type="submit"] {
+     padding-inline: 5rem;
+     height: 45px;
+     border-radius: 0.5rem;
+     border: none;
+     cursor: pointer;
+     color: white;
+     background: #28a745;
+     outline: none;
+     box-shadow: 5px 5px 5px rgb(0, 0, 0.2);
+     transition: 0.5s;
+ }
+
+ .addWidgetContainer input[type="submit"]:hover {
+     background-color: green;
+ }
+
+ .clr-yellow {
+     color: yellowgreen;
+ }
+
+ .clr-red {
+     color: red;
+ }
+
+ /* Style for edit and delete links as buttons */
+ .action-buttons a {
+     display: inline-block;
+     padding: 0.5rem 1rem;
+     margin: 0 5px;
+     text-decoration: none;
+     border-radius: 5px;
+     font-size: 14px;
+     font-weight: bold;
+     text-align: center;
+     transition: 0.3s;
+ }
+
+
+ .action-buttons a:first-child {
+     background-color: green;
+     color: white;
+ }
+
+
+ .action-buttons a:last-child {
+     background-color: red;
+     color: white;
+ }
+
+
+ .action-buttons a:first-child:hover {
+     background-color: darkgreen;
+ }
+
+ .action-buttons a:last-child:hover {
+     background-color: maroon;
+ }

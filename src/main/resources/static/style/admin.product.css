@@ -75,7 +75,6 @@ th {
 
 tr td {
     padding: 12px 15px;
-    /* Increased padding */
 }
 
 td {
@@ -83,7 +82,6 @@ td {
     border-bottom: 1px solid #ddd;
     text-align: left;
     vertical-align: middle;
-    /* Align content properly */
 }
 
 td img {
@@ -96,9 +94,7 @@ td img {
 td:last-child {
     display: flex;
     justify-content: center;
-    /* Center buttons horizontally */
     gap: 10px;
-    /* Space between buttons */
 }
 
 
@@ -180,10 +176,8 @@ td:last-child {
 .edit-btn,
 .delete-btn {
     width: 80px;
-    /* Ensuring uniform button width */
     text-align: center;
     padding: 8px 10px;
-    /* Proper padding for better appearance */
     font-size: 14px;
     font-weight: bold;
     border-radius: 5px;
@@ -218,7 +212,6 @@ td:last-child {
     border-radius: 8px;
 }
 
-/* Form Modal Styling */
 #productForm {
     background: #fff;
     padding: 20px;
@@ -254,7 +247,6 @@ td:last-child {
     font-size: 14px;
 }
 
-/* Dropdown Styling */
 #categoryDropdown {
     width: 100%;
     padding: 10px;
@@ -264,13 +256,12 @@ td:last-child {
     background-color: white;
 }
 
-/* Dropdown Focus Effect */
+
 #categoryDropdown:focus {
     border-color: #c41e3a;
     box-shadow: 0px 0px 5px rgba(196, 30, 58, 0.5);
 }
 
-/* Updated button styles */
 #productForm button {
     padding: 10px 15px;
     margin: 10px 5px;
@@ -298,7 +289,6 @@ td:last-child {
     background-color: #c82333;
 }
 
-/* Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
