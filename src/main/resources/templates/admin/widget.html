@@ -10,16 +10,19 @@
 
     <!-- Home Content -->
     <section class="home-section">
-        <h2><i class="fa-solid fa-star"></i></i> Widget</h2>
+        <h2><i class="fa-solid fa-star"></i> Widget</h2>
         <div class="container">
-            <div class="header">
+            <!-- <div class="header">
                 <input type="text" id="search" placeholder="Search category...">
                 <button id="addCategoryBtn">Add Category</button>
-            </div>
+            </div> -->
 
             <div class="addWidgetContainer">
                 <form action="/admin/widget/add" method="post">
-                    <input type="text" name="widgetName" placeholder="Enter a Widget name">
+                    <input type="text" name="widgetName" placeholder="Enter a Widget name.."
+                        data-th-value="${widget != null ? widget.widgetName : ''}">
+                    <input type="hidden" name="widgetId" data-th-value="${widget != null ? widget.widgetId : ''}">
+                    <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
                     <input type="submit">
                 </form>
             </div>
@@ -27,59 +30,25 @@
                 <thead>
                     <tr>
                         <th>Widget Name</th>
+                        <th>Widget Status</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="categoryTableBody">
-                    <tr data-th-each="category : ${categories}">
-                        <td data-th-text="${category.categoryName}"></td>
-                        <td data-th-text="${category.categoryDescription}"></td>
-                        <td>
-                            <img data-th-src="|/category/image/${category.categoryId}|" alt="samosha" height="40">
+                <tbody id="categoryTable">
+                    <tr data-th-each="widget : ${widgets}">
+                        <td data-th-text="${widget.widgetName}"></td>
+                        <td data-th-text="${widget.widgetStatus}"
+                            data-th-class="${widget.widgetStatus.name() == 'AVAILABLE' ? 'clr-yellow' : 'clr-red'}">
                         </td>
-                        <td data-th-text="${category.foodStatus}"></td>
-                        <td>
-                            <button class="edit-btn">Edit</button>
-                            <button class="delete-btn">Delete</button>
+                        <td class="action-buttons">
+                            <a data-th-href="|/admin/widget/edit?id=${widget.widgetId}|">edit</a>
+                            <a data-th-href="|/admin/widget/remove?id=${widget.widgetId}|"
+                                onclick="return confirm('Are you sure?')">delete</a>
                         </td>
-
                     </tr>
                 </tbody>
             </table>
         </div>
-
-        <!-- Modal -->
-        <div id="categoryDialog" class="modal">
-            <div class="modal-overlay"></div>
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Add Category</h2>
-
-                <!-- Updated: Changed div.form to a form element -->
-                <form id="categoryForm" method="post" action="/admin/category" enctype="multipart/form-data">
-
-                    <label for="categoryName">Category Name:</label>
-                    <input type="text" name="categoryName" id="categoryName" required>
-
-                    <label for="categoryDescription">Category Description:</label>
-                    <input type="text" name="categoryDescription" id="categoryDescription" required>
-
-                    <label for="categoryImage">Category Image:</label>
-                    <input type="file" name="categoryImageFile" id="categoryImage"
-                        accept="image/png, image/jpeg, image/jpg">
-
-                    <label for="categoryStatus">Category Status:</label>
-                    <select id="categoryStatus">
-                        <option value="Active">Active</option>
-                        <option value="Inactive">Inactive</option>
-                    </select>
-                    <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
-                    <button type="submit">Save</button>
-                </form>
-            </div>
-        </div>
-
-        <script src="/script/admin.category.js"></script>
     </section>
 </body>
 

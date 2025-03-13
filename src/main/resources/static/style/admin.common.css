@@ -14,16 +14,10 @@ body {
     position: fixed;
     height: 100%;
     width: 240px;
-    /* background: #c41e3a; */
+
     background: linear-gradient(black, rgb(255, 0, 0));
 }
 
-/* .sidebar .logo-details {
-    height: 80px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-} */
 .logo {
     background-image: url("/images/flavourhub2-logo.png");
     height: 90px;
@@ -42,12 +36,11 @@ body {
     padding-top: 1rem;
 }
 
-/* Ensuring sidebar layout remains intact */
+
 .sidebar .logo-details {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* Adding spacing between logo and name */
     padding: 10px;
 }
 
@@ -78,12 +71,9 @@ body {
 
 .sidebar .nav-links li a:hover {
     background: darkred;
-    /* transform: scale(1.05);
-    transition: all 0.3s ease-in-out; */
 }
 
 .sidebar .nav-links li a i {
-    /* background: red; */
     min-width: 60px;
     text-align: center;
     color: #fff;
@@ -102,7 +92,6 @@ body {
 
 /*home-content*/
 .home-section {
-    /* background: cornsilk; */
     position: relative;
     min-height: 100vh;
     width: calc(100% - 240px);
