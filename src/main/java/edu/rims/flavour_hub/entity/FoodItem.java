@@ -1,5 +1,6 @@
 package edu.rims.flavour_hub.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.rims.flavour_hub.constant.FoodStatus;
@@ -40,4 +41,12 @@ public class FoodItem extends Auditable {
 
     @ManyToMany(mappedBy = "foodItems")
     private List<Widget> widgets;
+
+    public void addWidget(Widget widget) {
+        if (widgets == null)
+            widgets = new ArrayList<>();
+
+        widgets.add(widget);
+    }
+
 }

@@ -80,15 +80,15 @@ td .status {
     opacity: 0.8;
 }
 
-.status.confirmed {
+/* .status.confirmed {
     background-color: lightgreen;
     color: darkgreen;
-}
+} */
 
-.status.cart {
+/* .status.cart {
     background-color: lightblue;
     color: blue;
-}
+} */
 
 .status.cancelled {
     background-color: lightcoral;
