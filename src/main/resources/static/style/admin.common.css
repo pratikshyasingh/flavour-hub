@@ -14,8 +14,8 @@ body {
     position: fixed;
     height: 100%;
     width: 240px;
-    /* background: #c41e3a; */
-    background: linear-gradient(black, rgb(255, 0, 0));
+    background: #d7a49a;
+    /* background: linear-gradient(black, rgb(255, 0, 0)); */
 }
 
 /* .sidebar .logo-details {
@@ -47,7 +47,6 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* Adding spacing between logo and name */
     padding: 10px;
 }
 

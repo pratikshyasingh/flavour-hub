@@ -87,7 +87,7 @@ header .navbar {
     cursor: pointer;
     border-radius: 8px;
     transition: 0.3s;
-    display: block;
+    text-decoration: none;
     margin-top: 15px;
 }
 
