@@ -10,45 +10,75 @@
 
     <!-- Home Content -->
     <section class="home-section">
-        <h2><i class="fa-solid fa-star"></i> Widget</h2>
         <div class="container">
-            <!-- <div class="header">
-                <input type="text" id="search" placeholder="Search category...">
-                <button id="addCategoryBtn">Add Category</button>
-            </div> -->
-
+            <h2><i class="fa-solid fa-star"></i> Widget</h2>
             <div class="addWidgetContainer">
                 <form action="/admin/widget/add" method="post">
                     <input type="text" name="widgetName" placeholder="Enter a Widget name.."
-                        data-th-value="${widget != null ? widget.widgetName : ''}">
-                    <input type="hidden" name="widgetId" data-th-value="${widget != null ? widget.widgetId : ''}">
+                        data-th-value="${widget != null ? widget.widgetName : null}">
+                    <input type="number" name="sequence" placeholder="Enter Sequence.." required
+                        data-th-value="${widget != null ? widget.sequence : ''}">
+                    <input type="hidden" name="widgetId" data-th-value="${widget != null ? widget.widgetId : null}">
                     <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
                     <input type="submit">
+                    <button id="addWidgetListbtn"></button>
                 </form>
             </div>
             <table>
                 <thead>
                     <tr>
+                        <th>Widget Id</th>
                         <th>Widget Name</th>
                         <th>Widget Status</th>
+                        <th>Widget Sequence</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="categoryTable">
                     <tr data-th-each="widget : ${widgets}">
+                        <td data-th-text="${widget.widgetId}"></td>
                         <td data-th-text="${widget.widgetName}"></td>
                         <td data-th-text="${widget.widgetStatus}"
                             data-th-class="${widget.widgetStatus.name() == 'AVAILABLE' ? 'clr-yellow' : 'clr-red'}">
                         </td>
+                        <td data-th-text="${widget.sequence}"></td>
                         <td class="action-buttons">
-                            <a data-th-href="|/admin/widget/edit?id=${widget.widgetId}|">edit</a>
                             <a data-th-href="|/admin/widget/remove?id=${widget.widgetId}|"
                                 onclick="return confirm('Are you sure?')">delete</a>
+                            <a data-th-href="|/admin/widget_product?id=${widget.widgetId}|">product</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
-        </div>
+
+            <!-- Modal -->
+            <div class="widgetModal d-none">
+                <div class="modal-box">
+                    <div class="modal-header">
+                        <h2>Add product to widget</h2>
+                    </div>
+                    <hr>
+                    <div class="modal-body">
+                        <form action="/admin/widget/widget_product/add" method="post" enctype="multipart/form-data"
+                            id="widgetProductForm">
+                            <p>Note: Download template <a href="/file/widget-template.csv" download>click the link</a>
+                            </p>
+                            <input type="file" accept="text/csv" name="file">
+                            <div class="text-center">
+                                <input type="submit" value="Upload">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="cross-icon">
+                        <button onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+    <script src="/script/admin.widget.js"></script>
+    </div>
     </section>
 </body>
 

@@ -1,9 +1,12 @@
 package edu.rims.flavour_hub.controller;
 
+import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.security.PublicKey;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -30,7 +33,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 // import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.bind.annotation.RequestBody;
+// import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 
@@ -136,15 +139,14 @@ public class AdminController {
     }
 
     @PostMapping("/admin/widget/add")
-    public String postMethodName(@RequestParam String widgetName, @RequestParam String widgetId) {
-        Widget widget = new Widget();
-
-        if (widgetId != null && widgetId.isEmpty()) {
-            widget.setWidgetId(widgetId);
-        }
-        System.out.println("value of:" + widgetId);
-        widget.setWidgetName((widgetName));
+    public String postMethodName(@RequestParam String widgetName, @RequestParam String widgetId,
+            @RequestParam Integer sequence) {
+        Widget widget = widgetRepository.findById(widgetId).orElse(new Widget());
+        // widget.setWidgetId(widgetId);
+        widget.setSequence(sequence);
+        widget.setWidgetName(widgetName);
         widget.setUpdatedDate(LocalDateTime.now());
+        widget.setWidgetStatus(WidgetStatus.AVAILABLE);
         widgetRepository.save(widget);
         return "redirect:/admin/widget";
     }
@@ -154,7 +156,6 @@ public class AdminController {
         Widget widget = widgetRepository.findById(widgetId).orElseThrow();
         widget.setWidgetStatus(WidgetStatus.UNAVAILABLE);
         widgetRepository.save(widget);
-
         return "redirect:/admin/widget";
     }
 
@@ -164,6 +165,50 @@ public class AdminController {
         model.addAttribute("widget", widget);
         model.addAttribute("widgets", widgetRepository.findAll());
         return "admin/widget";
+    }
+
+    @GetMapping("/admin/widget_product")
+    public String getMethodName(@RequestParam("id") String wigetId, Model model) {
+        Widget widget = widgetRepository.findById(wigetId).orElseThrow();
+        model.addAttribute("widget", widget);
+        return "admin/widget_product";
+    }
+
+    @PostMapping("/admin/widget/widget_product/add")
+    public String addProductToWidget(@RequestParam MultipartFile file) {
+
+        if (file.isEmpty())
+            return "redirect:/admin/widget";
+
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(file.getInputStream()));
+
+            // for header
+            bufferedReader.readLine();
+            String line;
+
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] split = line.split(",");
+                processDetails(split[0], split[1]);
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        return "redirect:/admin/widget";
+    }
+
+    private void processDetails(String widgetId, String foodId) {
+        FoodItem foodItem = food_itemRepository.findById(foodId).orElse(null);
+        Widget widget = widgetRepository.findById(widgetId).orElse(null);
+
+        if (foodItem != null && widget != null) {
+            if (!widget.getFoodItems().contains(foodItem)) {
+                widget.addFoodItem(foodItem);
+                widgetRepository.save(widget);
+            }
+        }
     }
 
 }

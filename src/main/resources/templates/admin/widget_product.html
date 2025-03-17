@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head data-th-replace="~{admin/common :: head}"></head>
+
+<body>
+    <link rel="stylesheet" href="/style/admin.widget.css">
+    <link rel="stylesheet" href="/style/admin.category.css">
+    <div data-th-replace="~{admin/common :: sidebar}"></div>
+
+    <!-- Home Content -->
+    <section class="home-section">
+        <div class="container">
+            <h2><i class="fa-solid fa-fire"></i> Food Widget</h2>
+            <div class="addWidgetContainer">
+                <form action="/admin/widget_product/add" method="post">
+                    <!-- <input type="text" name="widgetName" placeholder="Enter a Food Widget name.."
+                        data-th-value="${widget != null ? widget.widgetName : null}"> -->
+                    <!-- <input type="text" name="sequence" placeholder="Enter Sequence.."
+                        data-th-value="${widget != null ? widget.sequence : null}"> -->
+                    <input type="hidden" name="widgetId" data-th-value="${widget != null ? widget.widgetId : null}">
+                    <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
+                    <!-- <input type="submit" value="Add Widget"> -->
+                </form>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Widget Id</th>
+                        <th>Food Widget Name</th>
+                        <th>Food Item Status</th>
+                        <th>Widget Sequence</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="foodWidgetTable">
+                    <tr data-th-each="foodWidget : ${foodWidgets}">
+                        <td data-th-text="${foodWidget.widgetId}"></td>
+                        <td data-th-text="${foodWidget.widgetName}"></td>
+                        <td data-th-text="${foodWidget.widgetStatus}"
+                            data-th-class="${foodWidget.widgetStatus.name() == 'AVAILABLE' ? 'clr-yellow' : 'clr-red'}">
+                        </td>
+                        <td data-th-text="${foodWidget.sequence}"></td>
+                        <td class="action-buttons">
+                            <a data-th-href="|/admin/food-widget/edit?id=${foodWidget.widgetId}|">Edit</a>
+                            <a data-th-href="|/admin/food-widget/remove?id=${foodWidget.widgetId}|"
+                                onclick="return confirm('Are you sure?')">Delete</a>
+                            <a data-th-href="|/admin/food-widget/items?id=${foodWidget.widgetId}|">View Items</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+
+</html>
