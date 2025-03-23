@@ -14,7 +14,6 @@ body {
     position: fixed;
     height: 100%;
     width: 240px;
-
     background: linear-gradient(black, rgb(255, 0, 0));
 }
 
@@ -100,7 +99,7 @@ body {
 
 .home-section nav {
     height: 80px;
-    background: maroon;
+    background: #380000;
     padding: 0 20px;
     display: flex;
     align-items: center;
@@ -152,7 +151,7 @@ nav .search-box .fa-magnifying-glass {
     transform: translateY(-50%);
     height: 40px;
     width: 40px;
-    background: #2697ff;
+    background: darkred;
     border-radius: 6px;
     color: #fff;
     font-size: 22px;

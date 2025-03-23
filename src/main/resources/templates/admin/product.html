@@ -40,7 +40,7 @@
                                 <img data-th-src="|/foodItem/image/${item.foodId}|" alt="samosha" height="40">
                             </td>
                             <td>
-                                <button class="edit-btn">Edit</button>
+                                <button class="edit-btn" data-th-onclick="openModal([[${item.foodId}]])">Edit</button>
                                 <a data-th-href="|/admin/product/remove?product=${item.foodId}|"
                                     class="delete-btn">Delete</a>
                             </td>
@@ -56,7 +56,8 @@
             <form id="productForm" class="modal-content" method="post" action="/admin/product"
                 enctype="multipart/form-data">
                 <h3>Add/Edit Product</h3>
-
+                <input type="hidden" name="foodId" id="foodItemId">
+                <input type="hidden" name="foodItemImage" id="foodItemImage">
                 <label>Category Name:
                     <select id="categoryName" name="categoryId">
                         <option data-th-each="category : ${categories}" data-th-text="${category.categoryName}"
@@ -72,9 +73,9 @@
                 <input type="file" name="foodItemImageFile" id="product" accept="image/png, image/jpeg, image/jpg">
 
                 <label>Food Status:
-                    <select id="productStatus">
-                        <option value="Available">Available</option>
-                        <option value="Unavailable">Unavailable</option>
+                    <select id="productStatus" name="foodItemStatus">
+                        <option value="AVAILABLE">Available</option>
+                        <option value="UNAVAILABLE">Unavailable</option>
                     </select>
                 </label>
                 <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">

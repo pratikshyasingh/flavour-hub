@@ -11,14 +11,14 @@ body {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #c41e3a;
+    /* color: #c41e3a; */
     text-align: left;
 }
 
 .container h2 {
     font-size: 40px;
     font-weight: bold;
-    color: #a71e34;
+    /* color: #a71e34; */
     text-align: left;
     display: flex;
     align-items: center;

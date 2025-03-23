@@ -8,6 +8,7 @@ import java.security.PublicKey;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 // import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import edu.rims.flavour_hub.constant.FoodStatus;
 import edu.rims.flavour_hub.constant.WidgetStatus;
+import edu.rims.flavour_hub.dto.ProductResponseDTO;
+import edu.rims.flavour_hub.dto.ProductResponseDTO.CategoryResponse;
 import edu.rims.flavour_hub.entity.Category;
 import edu.rims.flavour_hub.entity.FoodItem;
 import edu.rims.flavour_hub.entity.Order;
@@ -32,6 +36,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 // import org.springframework.web.bind.annotation.RequestBody;
 // import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 // import org.springframework.web.bind.annotation.RequestBody;
 
@@ -51,7 +56,9 @@ public class AdminController {
     private WidgetRepository widgetRepository;
 
     @GetMapping("/admin/home")
-    String adminHome() {
+    String adminHome(Model model) {
+        List<Order> recentOrders = orderRepository.findTop5ByOrderByCreatedDateDesc();
+        model.addAttribute("recentOrders", recentOrders);
         return "admin/home";
     }
 
@@ -105,9 +112,15 @@ public class AdminController {
 
     @PostMapping("/admin/product")
     public String productAdd(@ModelAttribute FoodItem foodItem, @RequestParam String categoryId,
-            @RequestParam("foodItemImageFile") MultipartFile file) throws IOException {
+            @RequestParam("foodItemImageFile") MultipartFile file,
+            @RequestParam(required = false) String foodItemImage) throws IOException {
+
         Category category = categoryRepository.findById(categoryId).orElseThrow();
         foodItem.setCategory(category);
+
+        if (foodItemImage != null) {
+            foodItem.setFoodItemImageUrl(foodItemImage);
+        }
         if (!file.isEmpty()) {
             String originalFilename = file.getOriginalFilename();
             String extName = originalFilename.substring(originalFilename.lastIndexOf("."));
@@ -211,4 +224,26 @@ public class AdminController {
         }
     }
 
+    @GetMapping("/admin/products/{foodId}")
+    @ResponseBody
+    public ProductResponseDTO getProduct(@PathVariable String foodId) {
+        FoodItem foodItem = food_itemRepository.findById(foodId).orElseThrow();
+        ProductResponseDTO dto = new ProductResponseDTO();
+        dto.setFoodId(foodId);
+        dto.setFoodName(foodItem.getFoodName());
+        dto.setFoodDescription(foodItem.getFoodDescription());
+        dto.setPrice(foodItem.getPrice());
+        dto.setFoodItemStatus(foodItem.getFoodItemStatus().toString());
+        dto.setFoodItemImageUrl(foodItem.getFoodItemImageUrl());
+
+        CategoryResponse category = dto.new CategoryResponse();
+        category.setCategoryId(foodItem.getCategory().getCategoryId());
+        category.setCategoryName(foodItem.getCategory().getCategoryName());
+        dto.setCategory(category);
+        System.out.println(dto.getFoodDescription());
+        return dto;
+
+        // return foodItem;
+        // System.out.println(foodItem.getFoodDescription());
+    }
 }
