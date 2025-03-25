@@ -26,26 +26,26 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Widget Id</th>
-                        <th>Food Widget Name</th>
+                        <th>Widget Name</th>
+                        <th>Food Name</th>
                         <th>Food Item Status</th>
                         <th>Widget Sequence</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="foodWidgetTable">
-                    <tr data-th-each="foodWidget : ${foodWidgets}">
-                        <td data-th-text="${foodWidget.widgetId}"></td>
-                        <td data-th-text="${foodWidget.widgetName}"></td>
-                        <td data-th-text="${foodWidget.widgetStatus}"
-                            data-th-class="${foodWidget.widgetStatus.name() == 'AVAILABLE' ? 'clr-yellow' : 'clr-red'}">
+                    <tr data-th-each="foodWidget : ${widget.foodItems}">
+                        <td data-th-text="${widget.widgetName}"></td>
+                        <td data-th-text="${foodWidget.foodName}"></td>
+                        <td data-th-text="${widget.sequence}"></td>
+                        <td data-th-text="${foodWidget.foodItemStatus}"
+                            data-th-class="${foodWidget.foodItemStatus.name() == 'AVAILABLE' ? 'clr-yellow' : 'clr-red'}">
                         </td>
-                        <td data-th-text="${foodWidget.sequence}"></td>
                         <td class="action-buttons">
-                            <a data-th-href="|/admin/food-widget/edit?id=${foodWidget.widgetId}|">Edit</a>
-                            <a data-th-href="|/admin/food-widget/remove?id=${foodWidget.widgetId}|"
+                            <!-- <a data-th-href="|/admin/food-widget/edit?id=${foodWidget.widgetId}|">Edit</a> -->
+                            <a data-th-href="|/admin/food-widget/remove?id=${widget.widgetId}|"
                                 onclick="return confirm('Are you sure?')">Delete</a>
-                            <a data-th-href="|/admin/food-widget/items?id=${foodWidget.widgetId}|">View Items</a>
+                            <!-- <a data-th-href="|/admin/food-widget/items?id=${foodWidget.widgetId}|">View Items</a> -->
                         </td>
                     </tr>
                 </tbody>

@@ -68,66 +68,29 @@
         </section>
     </div>
     <!--popular dish-->
-    <div class="popular-dishes">
-        <h2>Popular Dishes</h2>
-        <div class="sub-popular-dishes">
-            <div class="dish">
-                <div class="image-container">
-                    <img src="/images/biriyani3.jpg" alt="">
-                </div>
-                <div class="details">
-                    <p class="price">Price: ₹150</p>
-                    <p class="discount">10% off</p>
-                    <p class=" details-about">Flavorful blend spices.</p>
-                    <button class="order-now">Order Now</button>
-                </div>
-            </div>
-            <div class="dish">
-                <div class="image-container">
-                    <img src="/images/butterpaneer1.jpg" alt="">
-                </div>
-                <div class="details">
-                    <p class="price">Price: ₹80.00</p>
-                    <p class="discount">15% off</p>
-                    <p class="details-about">Savory with a hint of garlic</p>
-                    <button class="order-now">Order Now</button>
-                </div>
-            </div>
-            <div class="dish">
-                <div class="image-container">
-                    <img src="/images/french-fries.jpg" alt="">
-                </div>
-                <div class="details">
-                    <p class="price">Price: ₹50.00</p>
-                    <p class="discount">20% off</p>
-                    <p class="details-about"> Crispy for cravings.</p>
-                    <button class="order-now">Order Now</button>
-                </div>
-            </div>
-            <div class="dish">
-                <div class="image-container">
-                    <img src="/images/gupchup.jpg" alt="">
-                </div>
-                <div class="details">
-                    <p class="price">Price: ₹40.00</p>
-                    <p class="discount">10% off</p>
-                    <p class="details-about">Crispy spheres of pure joy.</p>
-                    <button class="order-now">Order Now</button>
-                </div>
-            </div>
-            <div class="dish">
-                <div class="image-container">
-                    <img src="/images/paneer.jpg" alt="">
-                </div>
-                <div class="details">
-                    <p class="price">Price: ₹60.00</p>
-                    <p class="discount">10% off</p>
-                    <p class="details-about">Taste of pure delight.</p>
-                    <button class="order-now">Order Now</button>
+    <form action="/customer" method="post">
+        <div th:each="widget : ${widgets}">
+            <div class="popular-dishes">
+                <h2 data-th-each="${widget.widgetName}"></h2>
+                <div class="sub-popular-dishes">
+                    <div class="dish" data-th-each="widget : ${widgets}">
+                        <div class="image-container">
+                            <img src="/images/biriyani3.jpg" alt="">
+                        </div>
+                        <h3 data-th-text="${widget.widgetName}"></h3>
+                        <div class="details">
+                            <!-- <p class="price">Price: ₹150</p>
+                        <p class="discount">10% off</p>
+                        <p class=" details-about">Flavorful blend spices.</p> -->
+                            <button class="order-now">Order Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <input type="hidden" name="_csrf" data-th-value="${_csrf.token}">
+    </form>
+
     <!--menu-->
 
     <section class="catagory" id="catagory-menu">
@@ -300,7 +263,8 @@
                 alt="Image 8">
         </div>
         <p class="gallery-paragraph">Step into the heart of Flavour Hub and discover a visual feast! Our gallery
-            showcases the vibrant colors, textures, and artistic presentation of our dishes, crafted with passion and
+            showcases the vibrant colors, textures, and artistic presentation of our dishes, crafted with passion
+            and
             precision. From sizzling platters to mouth-watering desserts, each image is a preview of the delightful
             culinary experience that awaits you.</p>
     </div>

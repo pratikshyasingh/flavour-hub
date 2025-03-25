@@ -171,6 +171,7 @@ public class AdminController {
     public String getMethodName(@RequestParam("id") String wigetId, Model model) {
         Widget widget = widgetRepository.findById(wigetId).orElseThrow();
         model.addAttribute("widget", widget);
+        System.out.println(widget.getFoodItems().size());
         return "admin/widget_product";
     }
 
