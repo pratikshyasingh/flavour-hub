@@ -79,54 +79,48 @@
                 <div class="recent-sale-box">
                     <div class="title">Recent Sales</div>
                     <div class="sales-details">
-                        <ul class="details">
-                            <li class="topic">User ID</li>
-                            <li><a href="#">15668</a></li>
-                            <li><a href="#">56876</a></li>
-                            <li><a href="#">45647</a></li>
-                            <li><a href="#">56576</a></li>
-                            <li><a href="#">45676</a></li>
-                            <li><a href="#">45676</a></li>
-                        </ul>
-                        <ul class="details">
-                            <li class="topic">Date</li>
-                            <li><a href="#">11 Feb 2025</a></li>
-                            <li><a href="#">11 Feb 2025</a></li>
-                            <li><a href="#">11 Feb 2025</a></li>
-                            <li><a href="#">11 Feb 2025</a></li>
-                            <li><a href="#">11 Feb 2025</a></li>
-                            <li><a href="#">45676</a></li>
-                        </ul>
-                        <ul class="details">
-                            <li class="topic">Customer</li>
-                            <li><a href="#">mahendra Dhoni</a></li>
-                            <li><a href="#">Virat</a></li>
-                            <li><a href="#">SS iyer</a></li>
-                            <li><a href="#">Ducket</a></li>
-                            <li><a href="#">Mark Wood</a></li>
-                            <li><a href="#">45676</a></li>
-                        </ul>
-                        <ul class="details">
-                            <li class="topic">Sales</li>
-                            <li><a href="#">Delivered</a></li>
-                            <li><a href="#">Delivered</a></li>
-                            <li><a href="#">out for delivery</a></li>
-                            <li><a href="#">Pending</a></li>
-                            <li><a href="#">Pending</a></li>
-                            <li><a href="#">45676</a></li>
-                        </ul>
-                        <ul class="details">
-                            <li class="topic">Total</li>
-                            <li><a href="#">₹450.00</a></li>
-                            <li><a href="#">₹450.00</a></li>
-                            <li><a href="#">₹450.00</a></li>
-                            <li><a href="#">₹450.00</a></li>
-                            <li><a href="#">₹450.00</a></li>
-                            <li><a href="#">45676</a></li>
-                        </ul>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Address</th>
+                                    <th>Food Item</th>
+                                    <th>Quantity</th>
+                                    <th>Status</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-th-each="order : ${recentOrders}">
+                                    <td data-th-text="${order.user.userName}"></td>
+                                    <td data-th-text="${order.user.userAddress}"></td>
+                                    <td>
+                                        <ul>
+                                            <li data-th-each="item : ${order.orderItems}">
+                                                <span data-th-text="${item.foodItem.foodName}"></span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li data-th-each="item : ${order.orderItems}">
+                                                <span data-th-text="${item.orderItemQuantity}"></span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <p class="status"
+                                            data-th-class="'status ' + ${order.orderStatus.name().toLowerCase()}">
+                                        </p>
+                                        <span data-th-text="${order.orderStatus}"></span>
+                                    </td>
+                                    <td><strong data-th-text="'₹' + ${order.totalPrice}"></strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="button">
-                        <a href="#">See all</a>
+                        <a href="/admin/order">See all</a>
                     </div>
                 </div>
                 <!-- right-side -->

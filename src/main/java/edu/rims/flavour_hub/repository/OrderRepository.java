@@ -14,4 +14,6 @@ public interface OrderRepository extends JpaRepository<Order, String> {
 
     List<Order> findByUserUserEmailAndOrderStatusNot(String email, OrderStatus status);
 
+    List<Order> findTop5ByOrderByCreatedDateDesc();
+
 }
